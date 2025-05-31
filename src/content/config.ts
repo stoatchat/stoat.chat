@@ -33,6 +33,7 @@ const changelogCollection = defineCollection({
             z.literal("android"),
             z.literal("ios"),
             z.literal("api"),
+            z.literal("policy"),
             z.literal("all"),
         ]),
         date: z.string(),
