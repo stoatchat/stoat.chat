@@ -92,6 +92,11 @@ if (changelogsOnlyForProduct) {
                         <ChangelogTag product="api" noMargin />
                     </a>
                 </div>
+                <div class:list={[changelogsOnlyForProduct === "policy" && "selected", "product-selector-item"]}>
+                    <a href="/updates?show=changelogs&product=policy">
+                        <ChangelogTag product="policy" noMargin />
+                    </a>
+                </div>
                 <div class:list={[changelogsOnlyForProduct === "all" && "selected", "product-selector-item"]}>
                     <a href="/updates?show=changelogs&product=all">
                         <ChangelogTag product="all" noMargin />
