@@ -1,17 +1,67 @@
 ---
 import "../../assets/RevoltSans.css"
 import "@fontsource/fragment-mono/400.css"
+import "../../assets/inter/inter.css"
 
 export const COLOUR_ULTRA_PINK = "#FF005C" // Also change below
 ---
 
-<style is:global>
+<style is:global lang="scss">
     :root {
-        --typeface-primary: "Revolt Sans", sans-serif;
+        --typeface-primary: "Inter", sans-serif;
+        --typeface-primary-ffs: "zero" 1,"cv01" 1,"cv02" 1,"cv05" 1,"cv07" 1,"cv08" 1,"cv10" 1;
         --typeface-mono: "Fragment Mono", monospace;
         --easing: cubic-bezier(0.33, 1, 0.68, 1);
         --colour-ultra-pink: #ff005c; /* Also change above */
         --colour-ultra-pink-light: #f773aa;
         -webkit-tap-highlight-color: transparent;
+
+        // Primaries
+        --cpx: #7B2CBF;
+        --cpy: #C7F464;
+        
+        // Primaries shades
+        --cpx40: #9D4EDD;
+        --cpx70: #52057B;
+        --cpy40: #B5E48C;
+        --cpy70: #6A994E;
+
+        // Greys
+        --cg10: #0D0D0D;
+        --cg20: #1A1A1A;
+        --cg30: #2A2A2A;
+        --cg40: #404040;
+        --cg50: #666666;
+        --cg60: #888888;
+        --cg70: #A8A8A8;
+        --cg80: #C4C4C4;
+        --cg90: #E0E0E0;
+        --cgA0: #F5F5F5;
+
+        // User Status - Not used in the website but here for reference
+        --cso: #3BA55C;
+        --csi: #FAA61A;
+        --csd: #ED4245;
+        --csf: #5865F2;
+        --csx: #747F8D;
+
+        // Auxiliary for dataviz
+        --caa: #FF6B35;
+        --cab: #FF006E;
+        --cac: #00D9FF;
+        --cad: #FFD23F;
+        --cae: #00FFB7;
+
+        // Success, warning, danger
+        --cts: var(--cae);
+        --ctw: var(--cad);
+        --ctd: var(--csd);
+    }
+    
+    @supports (font-variation-settings: normal) {
+        :root {
+            --typeface-primary: "InterVariable", sans-serif;
+            font-optical-sizing: auto;
+        }
     }
 </style>

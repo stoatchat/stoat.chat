@@ -1,5 +1,5 @@
 ---
-import Wordmark from "../../assets/wordmark-w-only.svg"
+import Wordmark from "../../assets/StoatWhite.svg"
 import NavLinks from "./NavLinks.astro"
 import MenuIcon from "../../assets/apache2/menu.svg"
 ---
@@ -7,7 +7,7 @@ import MenuIcon from "../../assets/apache2/menu.svg"
 <nav class="site-navbar">
     <div class="nav-inner">
         <a href="/">
-            <img src={Wordmark.src} alt="Revolt" />
+            <img src={Wordmark.src} alt="Revolt" class="wordmark" />
         </a>
         <div class="links desktop">
             <NavLinks />
@@ -39,6 +39,12 @@ import MenuIcon from "../../assets/apache2/menu.svg"
             overflow-x: hidden;
             max-width: min(90vw, 1600px);
             margin: 0 auto;
+
+            .wordmark {
+                height: 60px;
+                width: auto;
+                margin-top: 0.5rem;
+            }
         }
 
         .links {
