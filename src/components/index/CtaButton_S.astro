@@ -16,12 +16,16 @@ const { label, href, primary } = Astro.props
 
 <style lang="scss">
     .cta-button-container {
+        border-radius: 9999px;
+
         &:link, &:visited {
             text-decoration: none;
         }
     }
 
     .cta-button-container:hover {
+        border-top: 5px solid transparent;
+        margin-top: -5px;
         border-bottom: 5px solid transparent;
         margin-bottom: -5px;
         height: 100%;

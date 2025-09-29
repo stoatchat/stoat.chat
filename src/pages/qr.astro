@@ -1,5 +1,5 @@
 ---
-import CtaButton from "../components/index/CtaButton.astro"
+import CtaButton from "../components/index/CtaButton_S.astro"
 import Navbar from "../components/layout/Navbar.astro"
 import MarketingLayout from "../layouts/MarketingLayout.astro"
 import { decode as cborDecode } from "cbor2"
@@ -14,7 +14,7 @@ type UserQRData = {
 }
 
 let error: String | null = null
-let title = "Revolt"
+let title = "Stoat"
 let data: UserQRData | null = null
 let noDisplayName = false
 
@@ -34,13 +34,13 @@ try {
     }
 
     noDisplayName = data.displayName === "01JDZRDD1YZ84HA8EST2E5GVXT" // Sentinel value
-    title = `${noDisplayName ? data.username : data.displayName} is on Revolt`
+    title = `${noDisplayName ? data.username : data.displayName} is on Stoat`
 } catch (e: any) {
     error = e.message
 }
 ---
 
-<MarketingLayout title={title} backgroundColor="#120A24">
+<MarketingLayout title={title} backgroundColor="#000000">
     <Navbar />
     <div class="spacer"></div>
     {
@@ -49,13 +49,13 @@ try {
                 <h1>{error}</h1>
                 <p>
                     The QR code you scanned is invalid. Please make sure you are
-                    scanning a valid Revolt QR code.
+                    scanning a valid Stoat QR code.
                 </p>
             </div>
         ) : (
             <div class="lr-pad">
                 <img
-                    src={`https://autumn.revolt.chat/avatars/${data?.avatar}?max_side=256`}
+                    src={`https://cdn.stoatusercontent.com/avatars/${data?.avatar}?max_side=256`}
                     alt={
                         ((noDisplayName ? data?.username : data?.displayName) ??
                             "User") +
@@ -69,17 +69,17 @@ try {
                     {data?.username}<span class="discriminator">#{data?.discriminator}</span>
                 </h2>
                 <p>
-                    Join them on Revolt by scanning this QR code with the Revolt Android and iOS apps or on the web.
+                    Join them on Stoat by scanning this QR code with the Stoat Android and iOS apps or on the web.
                 </p>
                 
                 <p style="opacity: 0.7">
-                    Revolt is the chat app that's built with you in mind. It's built for everyone from friends to communities,
-                    and it's open-source and free to use.
+                    Stoat is the chat app where you are the main character.<br/>
+                    It's built for everyone from friends to communities, and it's open-source and free to use.
                 </p>
 
                 <div class="middle">
-                    <CtaButton href="https://app.revolt.chat" label="Open Revolt" primary />
-                    <CtaButton href="https://revolt.chat" label="Learn More" />
+                    <CtaButton href="https://app.stoat.chat" label="Open Stoat" primary />
+                    <CtaButton href="https://stoat.chat" label="Learn More" />
                 </div>
             </div>
         )

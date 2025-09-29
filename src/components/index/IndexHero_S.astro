@@ -1,21 +1,34 @@
 ---
 import Cta from "./Cta_S.astro"
+import HeroTagline from "../../assets/index/other/hero-tagline.svg"
+import IndexHeroRenameNotice from "./IndexHeroRenameNotice_S.astro"
 ---
 
 <header>
-    <h1>The chat app where <span>you</span> are the <span>main character</span>.</h1>
+    <IndexHeroRenameNotice />
+    <img src={HeroTagline.src} alt="The app where you are the main character." class="tagline" />
     <Cta />
 </header>
 <style lang="scss">
     header {
         padding-top: 10rem;
+    }
 
-        h1 {
-            text-align: center;
+    .tagline {
+        width: min(90vw, 800px);
+        height: auto;
+        display: block;
+        margin: 2rem auto 4rem auto;
+        user-select: none;
+        pointer-events: none;
+    }
 
-            span {
-                color: var(--colour-ultra-pink);
-            }
-        }
+    p {
+        font-size: 1.5rem;
+        max-width: 600px;
+        margin: 0 auto 4rem auto;
+        text-align: center;
+        opacity: 0.9;
+        line-height: 1.25;
     }
 </style>

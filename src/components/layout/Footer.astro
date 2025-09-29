@@ -1,31 +1,31 @@
 ---
-import WordmarkWhite from "../../assets/StoatWhite.svg"
+import WordmarkWhite from "../../assets/stoat-white.svg"
 ---
 
 <footer>
     <div class="copyright-section">
-        <img src={WordmarkWhite.src} alt="Revolt" class="wordmark" />
+        <img src={WordmarkWhite.src} alt="Stoat" class="wordmark" />
         <div class="copyright">
             © Revolt Platforms Ltd, {new Date().getFullYear()}
         </div>
     </div>
     <div class="links-section">
         <div class="links">
-            <span>Revolt App</span>
+            <span>Stoat App</span>
             <a href="/download">Download for Desktop</a>
             <a href="/download/android">Download for Android</a>
             <a href="/download/ios">Download for iOS and iPadOS</a>
-            <a href="https://support.revolt.chat/" target="_blank">Support</a>
+            <a href="https://support.stoat.chat/" target="_blank">Support</a>
         </div>
         <div class="links">
             <span>Developers</span>
-            <a href="https://github.com/revoltchat/" target="_blank"
+            <a href="https://github.com/stoatchat/" target="_blank"
                 >Source Code</a
             >
-            <a href="https://developers.revolt.chat/" target="_blank"
+            <a href="https://developers.stoat.chat/" target="_blank"
                 >Documentation</a
             >
-            <a href="https://translate.revolt.chat/" target="_blank"
+            <a href="https://translate.stoat.chat/" target="_blank"
                 >Help Translate</a
             >
         </div>
@@ -33,17 +33,17 @@ import WordmarkWhite from "../../assets/StoatWhite.svg"
             <span>Team</span>
             <a href="/about">About</a>
             <a href="/updates">Blog and Changelogs</a>
-            <a href="https://support.revolt.chat/contact" target="_blank"
+            <a href="https://support.stoat.chat/contact" target="_blank"
                 >Contact</a
             >
         </div>
         <div class="links">
-            <span>Revolt on Socials</span>
-            <a href="https://bsky.app/profile/revolt.chat" target="_blank"
+            <span>Stoat on Socials</span>
+            <a href="https://bsky.app/profile/stoat.chat" target="_blank"
                 >Bluesky</a
             >
-            <a href="https://reddit.com/r/revoltchat" target="_blank">Reddit</a>
-            <a href="https://rvlt.gg/Testers" target="_blank">Revolt Server</a>
+            <a href="https://reddit.com/r/stoatchat" target="_blank">Reddit</a>
+            <a href="https://stt.gg/Testers" target="_blank">Stoat Server</a>
         </div>
         <div class="links">
             <span>Legal</span>
@@ -58,7 +58,7 @@ import WordmarkWhite from "../../assets/StoatWhite.svg"
 <style lang="scss">
     footer {
         color: white;
-        background-image: url("../../assets/revoltbg-footer.png");
+        background-color: var(--cg10);
         background-size: cover;
         background-position: center;
         background-opacity: 0.5;
@@ -141,7 +141,7 @@ import WordmarkWhite from "../../assets/StoatWhite.svg"
 
                 a:link,
                 a:visited {
-                    color: white;
+                    color: inherit;
                     transition:
                         opacity 0.2s var(--easing),
                         filter 0.2s var(--easing);

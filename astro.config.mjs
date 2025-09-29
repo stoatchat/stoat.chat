@@ -6,7 +6,7 @@ import mdx from "@astrojs/mdx"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://revolt.chat",
+    site: "https://stoat.chat",
     output: "server",
     integrations: [solidJs(), mdx()],
     adapter: node({

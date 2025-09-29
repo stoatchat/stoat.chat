@@ -1,5 +1,5 @@
 ---
-import Wordmark from "../../assets/StoatWhite.svg"
+import Wordmark from "../../assets/stoat-white.svg"
 import NavLinks from "./NavLinks.astro"
 import MenuIcon from "../../assets/apache2/menu.svg"
 ---
@@ -7,7 +7,7 @@ import MenuIcon from "../../assets/apache2/menu.svg"
 <nav class="site-navbar">
     <div class="nav-inner">
         <a href="/">
-            <img src={Wordmark.src} alt="Revolt" class="wordmark" />
+            <img src={Wordmark.src} alt="Stoat" class="wordmark" />
         </a>
         <div class="links desktop">
             <NavLinks />
@@ -59,7 +59,7 @@ import MenuIcon from "../../assets/apache2/menu.svg"
                 transition: color 0.2s var(--easing);
 
                 &:hover {
-                    color: #ff247f;
+                    color: var(--cpx30);
                 }
             }
         }
