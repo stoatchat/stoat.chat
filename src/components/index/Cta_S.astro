@@ -6,8 +6,8 @@ const uaString = Astro.request.headers.get("user-agent") || ""
 
 export const PLATFORM_LINKS = {
     windows: {
-        store: "Stoat Installer",
-        href: Consts.GITHUB_URL,
+        store: "Microsoft Store",
+        href: Consts.MSSTORE_URL,
     },
     macOS: {
         // TODO - When macOS app is ready, update this link to point to the App Store
@@ -76,7 +76,7 @@ const { isDownloadPage = false } = Astro.props
             </div>
         )
     }
-    <CtaButton label="Open Web App" href="https://app.stoat.chat" />
+    <CtaButton label="Open Web App" href="https://stoat.chat/app" />
 </div>
 <style lang="scss">
     .cta {
