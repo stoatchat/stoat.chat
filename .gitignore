@@ -27,4 +27,4 @@ pnpm-debug.log*
 dummydata/
 
 # font files
-*.woff2
+# *.woff2
