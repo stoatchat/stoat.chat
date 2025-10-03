@@ -7,6 +7,19 @@ date: "2025-10-01T00:00:00.000Z"
 giscus: true
 ---
 
+**2025-10-03** <br/>
+Just to make this abundantly clear, we received a cease & desist against our use of the name 'Revolt', we are not releasing any further details as this may cause harassment of the other party and may hurt negotiations.
+
+I apologise for the way this ended up being handled, we will do better in the future.
+
+I intend to write up a postmorterm within the next week to explain what went wrong and what I'm doing to ensure it won't happen again.
+
+We will also be following up with further developer guidance soon, in the mean time existing APIs should continue to work or automatically provide the new endpoints, please let us know if you're having issues!
+
+- insert
+
+---
+
 Remember when you first found us? That feeling of "finally, a platform that gets
 it"? We're about to give you that feeling all over again.
 
@@ -110,15 +123,19 @@ One more thing:
 
 > **Let's make some chaos together. Welcome to Stoat.**
 
-[^1]: This statement was the inspiration for our new tagline on the
+[^1]:
+    This statement was the inspiration for our new tagline on the
     [main page](https://stoat.chat/).
 
-[^2]: Long-awaited update that adds enhanced voice calling as well as video
+[^2]:
+    Long-awaited update that adds enhanced voice calling as well as video
     calling and screen sharing.
 
-[^3]: [@stoat.chat](https://bsky.app/profile/stoat.chat) on Bluesky, which uses
+[^3]:
+    [@stoat.chat](https://bsky.app/profile/stoat.chat) on Bluesky, which uses
     web handles.
 
-[^4]: Riggio 2024: Why Are People So Resistant to Change? (Psychology Today)
+[^4]:
+    Riggio 2024: Why Are People So Resistant to Change? (Psychology Today)
     https://www.psychologytoday.com/us/blog/cutting-edge-leadership/202408/why-are-people-so-resistant-to-change
     (wow an actual footnote??)
