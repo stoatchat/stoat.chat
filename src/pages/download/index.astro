@@ -1,178 +1,187 @@
 ---
-import DownloadTile from "../../components/download/DownloadTile.astro"
-import Cta from "../../components/index/Cta_S.astro"
-import Footer from "../../components/layout/Footer.astro"
-import Navbar from "../../components/layout/Navbar.astro"
-import MarketingLayout from "../../layouts/MarketingLayout.astro"
-import Consts from "../../lib/consts"
+import DownloadTile from "../../components/download/DownloadTile.astro";
+import Cta from "../../components/index/Cta_S.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import MarketingLayout from "../../layouts/MarketingLayout.astro";
+import Consts from "../../lib/consts";
 ---
 
 <MarketingLayout
-    title="Download Stoat for Desktop and Mobile"
-    backgroundColor="#000000"
+  title="Download Stoat for Desktop and Mobile"
+  backgroundColor="#000000"
 >
-    <Navbar />
-    <div class="spacer"></div>
-    <div class="lr-pad">
-        <div class="center">
-            <h1 class="main-heading">Get Stoat on all your devices</h1>
-            <p class="main-heading-sub">
-                Download Stoat for desktop, mobile, and the web.<br />
-                We're working on doing your smart fridge next. Maybe.
-            </p>
-            <Cta isDownloadPage />
-        </div>
-        <div class="tiles">
-            <DownloadTile
-                name="Windows"
-                stores={[
-                    {
-                        name: "Microsoft Store",
-                        url: Consts.MSSTORE_URL,
-                        primary: true,
-                    },
-                    {
-                        name: "GitHub",
-                        url: Consts.GITHUB_URL,
-                        primary: false,
-                    },
-                ]}
-            >
-                <p slot="description" class="description">
-                    We recommend the Microsoft Store for the best experience.<br
-                    />
-                    Available for Windows 10 and 11.
-                </p>
-            </DownloadTile>
-            <DownloadTile
-                name="macOS"
-                stores={[
-                    {
-                        name: "GitHub",
-                        url: Consts.GITHUB_URL,
-                        primary: true,
-                    },
-                    // TODO add TestFlight; App Store when macOS app is ready
-                ]}
-            >
-                <p slot="description" class="description">
-                    Download Stoat for macOS on GitHub.<br />
-                    Apple Silicon and Intel Macs supported.
-                </p>
-            </DownloadTile>
-            <DownloadTile
-                name="Linux"
-                stores={[
-                    {
-                        name: "Flathub",
-                        url: Consts.FLATHUB_URL,
-                        primary: true,
-                    },
-                    {
-                        name: "GitHub",
-                        url: Consts.GITHUB_URL,
-                        primary: false,
-                    },
-                ]}
-            >
-                <p slot="description" class="description">
-                    Available on Flathub for most Linux distributions.<br />
-                    AppImage packages available on GitHub.
-                </p>
-            </DownloadTile>
-            <DownloadTile
-                name="Android (Beta)"
-                stores={[
-                    {
-                        name: "Play Store",
-                        url: Consts.PLAYSTORE_URL,
-                        primary: true,
-                    },
-                ]}
-            >
-                <p slot="description" class="description">
-                    Download Stoat for Android on the Google Play Store.<br />
-                    Full tablet and foldable support included.<br />
-                    Android 7 and above.
-                </p>
-            </DownloadTile>
-            <DownloadTile
-                name="iOS and iPadOS (Beta)"
-                stores={[
-                    {
-                        name: "TestFlight",
-                        url: Consts.TESTFLIGHT_URL,
-                        primary: true,
-                    },
-                ]}
-            >
-                <p slot="description" class="description">
-                    Download Stoat for iOS and iPadOS on TestFlight.<br />
-                    Requires iOS 18.0 or later.
-                </p>
-            </DownloadTile>
-        </div>
+  <Navbar />
+  <div class="spacer"></div>
+  <div class="lr-pad">
+    <div class="center">
+      <h1 class="main-heading">Get Stoat on all your devices</h1>
+      <p class="main-heading-sub">
+        Download Stoat for desktop, mobile, and the web.<br />
+        We're working on doing your smart fridge next. Maybe.
+      </p>
+      <Cta isDownloadPage />
     </div>
-    <Footer />
+    <div class="tiles">
+      <DownloadTile
+        name="Windows"
+        stores={[
+          {
+            name: "Setup (.exe)",
+            url: Consts.WINDOWS_BUILD_URL,
+            primary: true,
+          },
+          {
+            name: "Microsoft Store",
+            url: Consts.MSSTORE_URL,
+            primary: false,
+          },
+        ]}
+      >
+        <p slot="description" class="description">
+          Available for Windows 10 and 11.
+        </p>
+      </DownloadTile>
+      <DownloadTile
+        name="macOS"
+        stores={[
+          {
+            name: "Apple Silicon",
+            url: Consts.LINUX_UNPACKED_ARM64_BUILD_URL,
+            primary: true,
+          },
+          {
+            name: "Intel",
+            url: Consts.LINUX_UNPACKED_X64_BUILD_URL,
+            primary: false,
+          },
+        ]}
+      >
+        <p slot="description" class="description">
+          Download Stoat for macOS.<br /><br />
+          If you receive the error <strong
+            >"Stoat" is damaged and can't be opened</strong
+          >: <br /> Open System Preference &gt; Privacy & Security then select "Open
+          Anyway" for the app. If the option is not present, redownload the app,
+          open the Terminal app using Spotlight, then paste <code
+            >cd ~/Downloads && xattr -d com.apple.quarantine Stoat.app</code
+          > and press enter.
+        </p>
+      </DownloadTile>
+      <DownloadTile
+        name="Linux"
+        stores={[
+          {
+            name: "Unpacked (x86)",
+            url: Consts.LINUX_UNPACKED_X64_BUILD_URL,
+            primary: true,
+          },
+          {
+            name: "Unpacked (arm64)",
+            url: Consts.LINUX_UNPACKED_ARM64_BUILD_URL,
+            primary: false,
+          },
+        ]}
+      >
+        <p slot="description" class="description">
+          Stoat for Desktop is not currently packaged for any major
+          distributions. <br /> Please get in contact if you'd like to help or flag
+          up new packages.
+        </p>
+      </DownloadTile>
+      <DownloadTile
+        name="Android (Beta)"
+        stores={[
+          {
+            name: "Play Store",
+            url: Consts.PLAYSTORE_URL,
+            primary: true,
+          },
+        ]}
+      >
+        <p slot="description" class="description">
+          Download Stoat for Android on the Google Play Store.<br />
+          Full tablet and foldable support included.<br />
+          Android 8.0 and above.
+        </p>
+      </DownloadTile>
+      <DownloadTile
+        name="iOS and iPadOS (Beta)"
+        stores={[
+          {
+            name: "TestFlight",
+            url: Consts.TESTFLIGHT_URL,
+            primary: true,
+          },
+        ]}
+      >
+        <p slot="description" class="description">
+          Download Stoat for iOS and iPadOS on TestFlight.<br />
+          Requires iOS 18.0 or later.
+        </p>
+      </DownloadTile>
+    </div>
+  </div>
+  <Footer />
 </MarketingLayout>
 <style lang="scss">
-    .lr-pad {
-        max-width: min(130ch, 90vw);
-        margin: 0 auto;
-        display: grid;
-        gap: 4rem;
-        padding-bottom: 4rem;
-    }
+  .lr-pad {
+    max-width: min(130ch, 90vw);
+    margin: 0 auto;
+    display: grid;
+    gap: 4rem;
+    padding-bottom: 4rem;
+  }
 
-    .spacer {
-        height: 12rem;
-    }
+  .spacer {
+    height: 12rem;
+  }
 
-    .center {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-    }
+  .center {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-    .main-heading {
-        font-size: 4rem;
-        font-weight: 750;
-        color: white;
-        line-height: 1;
-    }
+  .main-heading {
+    font-size: 4rem;
+    font-weight: 750;
+    color: white;
+    line-height: 1;
+  }
 
-    .main-heading-sub {
-        font-size: 1.5rem;
-        color: white;
-        opacity: 0.7;
-        margin-bottom: 4rem;
-        line-height: 1.5;
-    }
+  .main-heading-sub {
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0.7;
+    margin-bottom: 4rem;
+    line-height: 1.5;
+  }
 
-    .tiles {
-        display: grid;
-        gap: 2rem;
-        // Max 2 columns, 1 if space is too small
-        grid-template-columns: 1fr 1fr;
+  .tiles {
+    display: grid;
+    gap: 2rem;
+    // Max 2 columns, 1 if space is too small
+    grid-template-columns: 1fr 1fr;
 
-        @media (max-width: 1024px) {
-            grid-template-columns: 1fr;
-        }
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
     }
+  }
 
-    code {
-        font-size: 0.9em;
-        font-family: var(--typeface-mono);
-        background-color: rgb(255 255 255 / 10%);
-        padding: 0.1em 0.3em;
-        border-radius: 0.2em;
-        vertical-align: middle;
-    }
+  code {
+    font-size: 0.9em;
+    font-family: var(--typeface-mono);
+    background-color: rgb(255 255 255 / 10%);
+    padding: 0.1em 0.3em;
+    border-radius: 0.2em;
+    vertical-align: middle;
+  }
 
-    .description {
-        font-size: 1rem;
-        color: white;
-        opacity: 0.7;
-        line-height: 1.5;
-    }
+  .description {
+    font-size: 1rem;
+    color: white;
+    opacity: 0.7;
+    line-height: 1.5;
+  }
 </style>
