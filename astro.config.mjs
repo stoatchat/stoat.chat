@@ -7,7 +7,7 @@ import mdx from "@astrojs/mdx"
 // https://astro.build/config
 export default defineConfig({
     site: "https://stoat.chat",
-    output: "server",
+    output: process.env.PREVIEW_BUILD ? "static" : "server",
     integrations: [solidJs(), mdx()],
     adapter: node({
         mode: "middleware",

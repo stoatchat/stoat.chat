@@ -1,7 +1,18 @@
 ---
+import type { GetStaticPaths } from "astro";
 import TechnicalContent from "../../components/blog/TechnicalContent.astro"
 import Layout from "../../layouts/BlogLayout.astro"
-import { getEntry } from "astro:content"
+import { getCollection, getEntry } from "astro:content"
+
+export const getStaticPaths = (async () => {
+    const posts = await getCollection('blog');
+    const updates = await getCollection('changelog');
+    
+    return [...posts, ...updates].map(page => ({
+        params: { slug: page.slug },
+        props: { page }
+    }));
+}) satisfies GetStaticPaths;
 
 const { slug } = Astro.params as { slug: string }
 const entryBlog = await getEntry("blog", slug)
