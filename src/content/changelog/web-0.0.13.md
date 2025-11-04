@@ -44,3 +44,7 @@ And if you navigate away, the voice chat stays accessible:
 - Publish `stoat.js` and `stoat-api` packages to npmjs.
 - Internally switch to bigints for permissions.
 - Don't permit adding more replies than maximum. (marcy: <a rel="nofollow ugc" target="_blank" href="https://github.com/stoatchat/for-web/pull/495">#495</a>)
+- Reimplement adding bots via Discover. (amycatgirl: <a rel="nofollow ugc" target="_blank" href="https://github.com/stoatchat/for-web/pull/504">#504</a>)
+- Add a context menu to attachments. (amycatgirl: <a rel="nofollow ugc" target="_blank" href="https://github.com/stoatchat/for-web/pull/479">#479</a>)
+- Make reply previews non-interactive. (Aeledfyr: <a rel="nofollow ugc" target="_blank" href="https://github.com/stoatchat/for-web/pull/498">#498</a>)
+- Fix logic error in forms preventing submission.
