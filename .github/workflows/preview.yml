@@ -10,6 +10,10 @@ on:
 
 concurrency: preview-${{ github.ref }}
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
@@ -30,9 +34,9 @@ jobs:
           pnpm install
           pnpm build
         env:
-          PREVIEW_BUILD: 1
+          PREVIEW_BUILD: /stoat.chat/pr-preview/pr-${{ github.event.number }}/
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./build/
+          source-dir: ./dist/client
