@@ -12,6 +12,7 @@ concurrency: preview-${{ github.ref }}
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   deploy-preview:
