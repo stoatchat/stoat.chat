@@ -5,6 +5,8 @@ export default class Consts {
         "https://play.google.com/store/apps/details?id=chat.revolt" as const;
     static readonly FLATHUB_URL =
         "https://flathub.org/apps/chat.revolt.RevoltDesktop" as const;
+    static readonly COMMUNITY_FEDORA_URL =
+        "https://copr.fedorainfracloud.org/coprs/cchoisy/stoat/" as const;
     static readonly TESTFLIGHT_URL =
         "https://testflight.apple.com/join/mGSCJe13" as const;
     static readonly GITHUB_URL =
