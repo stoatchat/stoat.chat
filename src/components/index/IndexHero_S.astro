@@ -1,12 +1,17 @@
 ---
 import Cta from "./Cta_S.astro"
-import HeroTagline from "../../assets/index/other/hero-tagline.svg"
-import IndexHeroRenameNotice from "./IndexHeroRenameNotice_S.astro"
+import HeroTagline from "../../assets/scalable/HeroTagline.png"
+import HeroTagline2x from "../../assets/scalable/HeroTagline@2x.png"
+import HeroTagline3x from "../../assets/scalable/HeroTagline@3x.png"
 ---
 
 <header>
-    <IndexHeroRenameNotice />
-    <img src={HeroTagline.src} alt="The app where you are the main character." class="tagline" />
+    <img
+        src={HeroTagline.src}
+        srcset={`${HeroTagline.src} 1x, ${HeroTagline2x.src} 2x, ${HeroTagline3x.src} 3x`}
+        alt="Cut the cord. Get on Stoat."
+        class="tagline"
+    />
     <Cta />
 </header>
 <style lang="scss">

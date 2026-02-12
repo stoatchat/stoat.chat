@@ -9,7 +9,7 @@ import Consts from "../../lib/consts";
 
 <MarketingLayout
   title="Download Stoat for Desktop and Mobile"
-  backgroundColor="#000000"
+  backgroundColor="var(--color-bg-primary)"
 >
   <Navbar />
   <div class="spacer"></div>
@@ -62,8 +62,8 @@ import Consts from "../../lib/consts";
           If you receive the error <strong
             >"Stoat" is damaged and can't be opened</strong
           >: <br /> Open System Preference &gt; Privacy & Security then select "Open
-          Anyway" for the app. If the option is not present, redownload the app,
-          open the Terminal app using Spotlight, then paste <code
+          Anyway" for the app. If the option is not present, redownload the app, open
+          the Terminal app using Spotlight, then paste <code
             >cd ~/Downloads && xattr -d com.apple.quarantine Stoat.app</code
           > and press enter.
         </p>
@@ -72,21 +72,24 @@ import Consts from "../../lib/consts";
         name="Linux"
         stores={[
           {
-            name: "Unpacked (x86)",
-            url: Consts.LINUX_UNPACKED_X64_BUILD_URL,
+            name: "Flathub",
+            url: Consts.FLATHUB_URL,
             primary: true,
           },
           {
-            name: "Unpacked (arm64)",
-            url: Consts.LINUX_UNPACKED_ARM64_BUILD_URL,
+            name: "Packages by Distribution",
+            url: Consts.LINUX_PACKAGE_VERSIONS,
+            primary: false,
+          },
+          {
+            name: "GitHub",
+            url: Consts.GITHUB_URL,
             primary: false,
           },
         ]}
       >
         <p slot="description" class="description">
-          Stoat for Desktop is not currently packaged for any major
-          distributions. <br /> Please get in contact if you'd like to help or flag
-          up new packages.
+          We recommend installing Stoat through Flathub.
         </p>
       </DownloadTile>
       <DownloadTile

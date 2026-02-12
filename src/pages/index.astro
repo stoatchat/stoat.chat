@@ -2,23 +2,182 @@
 import Layout from "../layouts/MarketingLayout.astro"
 import Navbar from "../components/layout/Navbar.astro"
 import Footer from "../components/layout/Footer.astro"
-import IndexConclusionSection from "../components/index/IndexConclusionSection.astro"
-import IndexGroupDMSection from "../components/index/IndexGroupDMSection.astro"
-import IndexSecureSection from "../components/index/IndexSecureSection.astro"
-import IndexMakeItYoursSection from "../components/index/IndexMakeItYoursSection.astro"
-import IndexModSection from "../components/index/IndexModSection.astro"
-import IndexChatSection from "../components/index/IndexChatSection.astro"
-import IndexHero from "../components/index/IndexHero_S.astro"
+import IndexHero from "../components/index/IndexHero.astro"
+import Cta from "../components/index/Cta_S.astro"
+import ReasonTile from "../components/index/ReasonTile.astro"
 ---
 
-<Layout title="Stoat" backgroundColor="#000000">
+<Layout title="Stoat - Find your community" backgroundColor="var(--color-bg-primary)">
     <Navbar />
     <IndexHero />
-    <IndexChatSection />
-    <IndexModSection />
-    <IndexMakeItYoursSection />
-    <IndexSecureSection />
-    <IndexGroupDMSection />
-    <IndexConclusionSection />
+
+    <section class="reasons">
+        <h2>The better chat app.</h2>
+        <div class="reasons-grid">
+            <ReasonTile
+                title="Everything you need&hellip;"
+                description="All the features you've come to expect in the 21st century are here. Servers, channels, voice chat, file sharing, markdown support, and all the rest."
+            />
+            <ReasonTile
+                title="&hellip;and nothing you don't."
+                description="No ads, no data mining, no shady partnerships. We know you don't want that, your community doesn't want that, and we don't want that either."
+            />
+            <ReasonTile
+                title="Handles tens,\nhandles thousands."
+                description="Whether you're chatting with a handful of friends or running a bustling community, Stoat scales with you. The tools work the same, no matter how big you get."
+            />
+            <ReasonTile
+                title="The rules are simple."
+                description="Manage your community with an intuitive role-based permissions system, powerful moderation tools, and the best moderation bots in class."
+            />
+            <ReasonTile
+                title="Not sketchy,\nnot creepy."
+                description="Built in Europe under some of the strictest data protection laws in the world. The code is public and the privacy policy is short enough to actually read. We don't sell your data and we never will."
+            />
+            <ReasonTile
+                title="Take it with you.\nEverywhere."
+                description="Your account, your conversations, your settings. All in sync across every device you own. We've got you covered on Windows, macOS, Linux, Android, iOS, and the web."
+            />
+            <ReasonTile
+                title="Answers to you,\nnot investors."
+                description="We've got no board to please and no ad revenue to protect. Every decision we make starts and ends with the people using the software. Free and open source, now and forever."
+            />
+            <ReasonTile
+                title="You're in control. Really in control."
+                description="You don't have to worry about hosting your own server if you don't want to, but if you do, we've got you covered. It's free, it's open, and it's yours to do with as you please."
+            />
+        </div>
+    </section>
+
+    <section class="added-value">
+        <h2>Still not convinced?</h2>
+        <div class="added-value-items">
+            <div class="added-value-item">
+                <h3>Don't pay for basic stuff.</h3>
+                <p>
+                    Custom emojis, a 20GB file upload limit and a server-specific profile picture with no subscription required. Animated avatars for everyone.
+                    We've even solved the age-old problem of letting you set a banner on your profile without making you pay for it. It's the little things.
+                </p>
+            </div>
+            <div class="added-value-item reverse">
+                <h3>Theming won't get you banned.</h3>
+                <p>
+                    Stoat has some cool-looking themes right out of the box, and if you don't like them, get more from the Discover section or make your own. You can even use CSS if you're feeling adventurous.
+                </p>
+            </div>
+            <div class="added-value-item">
+                <h3>Group DMs that scale.</h3>
+                <p>
+                    Group DMs on Stoat support up to 50 members, making them perfect for everything from ad-hoc voice groups to project collaboration. Bots work in them too, because why wouldn't they?
+                </p>
+            </div>
+            <div class="added-value-item reverse">
+                <h3>Developers love it.</h3>
+                <p>
+                    Our public API is so powerful that we use it ourselves for the official apps. If you're a developer, you'll feel right at home building with Stoat, whether it's a simple bot or a custom client.
+                </p>
+            </div>
+            <div class="added-value-item">
+                <h3>We actually listen.</h3>
+                <p>
+                    We have an open issue tracker. If you have a problem with the software, want to request a feature, or just want to say hi, we're all ears: just join our community server and let us know what you think.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing">
+        <h2>Ready to make the switch?</h2>
+        <Cta />
+    </section>
+
     <Footer />
 </Layout>
+
+<style lang="scss">
+.reasons {
+    padding: 4rem 0;
+    max-width: min(130ch, 90vw);
+    margin: 0 auto;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        font-weight: 750;
+        text-align: center;
+    }
+
+    .reasons-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.added-value {
+    padding: 4rem 0;
+    max-width: min(130ch, 90vw);
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 750;
+    }
+
+    p {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        line-height: 1.5;
+    }
+
+    .added-value-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .added-value-item {
+            text-align: left;
+
+            h3 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+
+            p {
+                max-width: 600px;
+                font-weight: 450;
+                letter-spacing: 0.02em;
+                line-height: 1.4;
+            }
+
+            &.reverse {
+                text-align: right;
+
+                h3 {
+                    margin-left: auto;
+                }
+
+                p {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+.closing {
+    padding: 4rem 0;
+    max-width: min(130ch, 90vw);
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 750;
+    }
+}
+</style>

@@ -57,7 +57,7 @@ const { label, href, primary } = Astro.props
     }
 
     .cta-button-primary {
-        background-color: var(--cpx);
+        background-color: var(--color-primary);
     }
 
     .cta-button-label {
@@ -65,5 +65,9 @@ const { label, href, primary } = Astro.props
         letter-spacing: 0.02em;
         font-weight: 500;
         color: white;
+    }
+
+    .cta-button-primary .cta-button-label {
+        color: black;
     }
 </style>

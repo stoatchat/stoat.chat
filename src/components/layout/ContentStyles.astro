@@ -6,6 +6,8 @@
     <slot />
 </div>
 <style lang="scss" is:global>
+    @use "sass:color";
+    
     .contentstyles {
         p,
         ul,
@@ -21,7 +23,7 @@
         }
 
         kbd {
-            background-color: var(--cpy);
+            background-color: var(--color-secondary);
             color: var(--colour-white);
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
@@ -39,13 +41,13 @@
 
         a:link,
         a:visited {
-            color: var(--cpy);
+            color: var(--color-secondary);
             text-decoration: underline;
             text-underline-offset: 0.2rem;
-            text-decoration-color: transparentize(#C7F464, 0.5);
+            text-decoration-color: color.scale(#00ffd8, $alpha: -50%);
 
             &:hover {
-                color: var(--cpy40);
+                color: var(--color-secondary-400);
             }
         }
 
@@ -64,17 +66,17 @@
                 line-height: 1.7;
 
                 &::marker {
-                    color: var(--cpx);
+                    color: var(--color-primary);
                     font-family: var(--typeface-mono);
                 }
             }
         }
 
         blockquote {
-            border-left: 0.25rem solid var(--cpx);
+            border-left: 0.25rem solid var(--color-primary);
             margin: 1rem 0;
             padding: 0.1rem 1.5rem;
-            background-color: #8C24EC31;
+            background: linear-gradient(to left, #00d8ff22, #00d8ff33);
         }
 
         table {
@@ -89,12 +91,12 @@
             }
 
             th {
-                border-bottom: 4px solid var(--colour-ultra-pink);
+                border-bottom: 4px solid var(--color-primary);
                 background-color: rgba(255, 0, 92, 0.1);
             }
 
             tr:nth-child(even) {
-                background-color: transparentize(white, 0.96);
+                background-color: color.scale(white, $alpha: -96%);
             }
         }
 

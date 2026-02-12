@@ -1,5 +1,5 @@
 ---
-import Wordmark from "../../assets/stoat-white.svg"
+import Wordmark from "../../assets/Stoat_White.svg"
 import NavLinks from "./NavLinks.astro"
 import MenuIcon from "../../assets/apache2/menu.svg"
 ---
@@ -25,43 +25,76 @@ import MenuIcon from "../../assets/apache2/menu.svg"
 
 <style lang="scss" is:global>
     nav.site-navbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        position: fixed;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1000;
+        width: fit-content;
+        max-width: calc(100vw - 2rem);
 
         .nav-inner {
-            padding: 3rem 0;
+            padding: 1rem 2rem;
             display: flex;
-            gap: 4rem;
+            gap: 2rem;
             align-items: center;
-            overflow-x: hidden;
-            max-width: min(90vw, 1600px);
-            margin: 0 auto;
+            border-radius: 9999px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1001;
+
+            background: rgba(42, 35, 58, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow:
+                0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+            transition: all 0.3s var(--easing);
+
+            &:hover {
+                background: rgba(42, 35, 58, 0.8);
+                box-shadow:
+                    0 12px 40px 0 rgba(0, 0, 0, 0.45),
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+            }
+
+            a {
+                padding: 0;
+                margin: 0;
+                display: grid;
+                place-items: center;
+            }
 
             .wordmark {
-                height: 60px;
+                height: 35px;
                 width: auto;
-                margin-top: 0.5rem;
             }
         }
 
         .links {
             display: flex;
             gap: 1.5rem;
+            align-items: center;
+            flex-shrink: 0;
 
             a {
                 color: white;
                 text-decoration: none;
                 font-weight: 500;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 transition: color 0.2s var(--easing);
+                white-space: nowrap;
 
                 &:hover {
-                    color: var(--cpx30);
+                    color: var(--color-primary);
                 }
             }
+        }
+
+        .wordmark {
+            flex-shrink: 0;
         }
 
         .mobile > button {
@@ -77,57 +110,113 @@ import MenuIcon from "../../assets/apache2/menu.svg"
             }
         }
 
-        .mobile-menu:not(.open) {
-            display: none;
+        @keyframes slide-down {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        @keyframes slide-down {
-            0% {
-                transform: translateY(-50vh);
+        @keyframes slide-up {
+            from {
+                transform: translateY(0);
+                opacity: 1;
             }
-            100% {
-                transform: translateY(-100px);
+            to {
+                transform: translateY(-100%);
+                opacity: 0;
             }
         }
 
         .mobile-menu {
             position: absolute;
-            top: 100%;
+            top: 0;
             left: 0;
             right: 0;
-            background: #0c0c1f;
-            padding: 2rem 1.75rem;
-            padding-top: 8rem;
-            transform: translateY(-100px);
-            display: flex;
+            width: 100%;
+
+            background: rgba(42, 35, 58, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow:
+                0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+            padding: 0;
+            display: none;
             flex-direction: column;
-            gap: 1rem;
-            z-index: -1;
-            animation: slide-down 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-        }
+            gap: 0;
+            z-index: 999;
+            box-sizing: border-box;
 
-        @keyframes slide-up {
-            0% {
-                transform: translateY(-100px);
+            &.open {
+                display: flex;
+                animation: slide-down 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
             }
-            100% {
-                transform: translateY(-50vh);
-            }
-        }
 
-        .mobile-menu.animate-out {
-            animation: slide-up 0.5s cubic-bezier(0.64, 0, 0.78, 0) forwards;
+            &.closing {
+                display: flex;
+                animation: slide-up 0.3s cubic-bezier(0.64, 0, 0.78, 0) forwards;
+            }
+
+            a {
+                display: block;
+                padding: 1rem 1.5rem;
+                width: 100%;
+                box-sizing: border-box;
+                transition: background-color 0.2s var(--easing);
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
         }
 
         @media (max-width: 768px) {
+            & {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                transform: none;
+                width: 100%;
+                max-width: 100%;
+                overflow: visible;
+            }
+
             .nav-inner {
-                padding: 2rem 0;
-                gap: 2rem;
+                padding: 1rem 1.5rem;
+                gap: 1rem;
                 justify-content: space-between;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(42, 35, 58, 0.95);
+                box-sizing: border-box;
             }
 
             .desktop {
                 display: none;
+            }
+
+            .wordmark {
+                height: 32px !important;
+            }
+
+            .mobile-menu {
+                padding-top: calc(64px + 2rem + 1px); // logo height + vertical padding + border
+
+                a {
+                    font-size: 1.1rem;
+                    padding: 1rem 1.5rem;
+                }
             }
         }
 
@@ -137,36 +226,60 @@ import MenuIcon from "../../assets/apache2/menu.svg"
             }
 
             .mobile-menu {
-                display: none;
+                display: none !important;
             }
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-top: calc(32px + 2rem + 1px);
         }
     }
 </style>
 
 <script>
-    document
-        .querySelector<HTMLElement>(".mobile > button")!
-        .addEventListener("click", () => {
-            if (
-                document
-                    .querySelector<HTMLElement>(".mobile-menu")!
-                    .classList.contains("open")
-            ) {
-                document
-                    .querySelector<HTMLElement>(".mobile-menu")!
-                    .classList.add("animate-out")
-                setTimeout(() => {
-                    document
-                        .querySelector<HTMLElement>(".mobile-menu")!
-                        .classList.remove("animate-out")
-                    document
-                        .querySelector<HTMLElement>(".mobile-menu")!
-                        .classList.remove("open")
-                }, 500)
-            } else {
-                document
-                    .querySelector<HTMLElement>(".mobile-menu")!
-                    .classList.add("open")
-            }
-        })
+    const menu = document.querySelector<HTMLElement>(".mobile-menu")!
+    const button = document.querySelector<HTMLElement>(".mobile > button")!
+    let isAnimating = false
+
+    button.addEventListener("click", (e) => {
+        e.stopPropagation()
+
+        if (isAnimating) return
+
+        if (menu.classList.contains("open")) {
+            isAnimating = true
+            menu.classList.remove("open")
+            menu.classList.add("closing")
+
+            setTimeout(() => {
+                menu.classList.remove("closing")
+                isAnimating = false
+            }, 300)
+        } else if (!menu.classList.contains("closing")) {
+            isAnimating = true
+            menu.classList.remove("closing")
+            menu.classList.add("open")
+
+            setTimeout(() => {
+                isAnimating = false
+            }, 300)
+        }
+    })
+
+    document.addEventListener("click", (e) => {
+        const navbar = document.querySelector<HTMLElement>(".site-navbar")!
+
+        if (!navbar.contains(e.target as Node) && menu.classList.contains("open") && !isAnimating) {
+            isAnimating = true
+            menu.classList.remove("open")
+            menu.classList.add("closing")
+
+            setTimeout(() => {
+                menu.classList.remove("closing")
+                isAnimating = false
+            }, 300)
+        }
+    })
 </script>

@@ -2,28 +2,24 @@
 import Navbar from "../components/layout/Navbar.astro"
 import MarketingLayout from "../layouts/MarketingLayout.astro"
 import Footer from "../components/layout/Footer.astro"
-import Goostle from "../assets/goostle.png"
 ---
 
-<MarketingLayout title="Stoat: 500" backgroundColor="#000000">
+<MarketingLayout title="Stoat: 500" backgroundColor="var(--color-bg-primary)">
     <Navbar />
 
     <div class="spacer"></div>
     <div class="lr-pad">
         <div class="center">
-            <h1 class="main-heading">Oh, the misery&hellip;</h1>
+            <div class="big-500" aria-hidden="true">
+                <span class="digit" style="--i:0">5</span>
+                <span class="digit" style="--i:1">0</span>
+                <span class="digit" style="--i:2">0</span>
+            </div>
+            <h1 class="main-heading">Something went wrong</h1>
             <p class="main-heading-sub">
-                We've ran into a big issue and we're sorry for the
-                inconvenience. Please try again later.
+                We've run into an unexpected issue on our end. Please try again
+                later.
             </p>
-            <p class="goostle-hint">
-                Here's Goostle walking up a hill to cheer you up.
-            </p>
-            <img
-                src={Goostle.src}
-                alt="Goostle, a Stoat mascot. A goose with a turtle shell. The name is a portmanteau of goose and turtle."
-                class="goostle"
-            />
         </div>
     </div>
     <Footer />
@@ -46,35 +42,45 @@ import Goostle from "../assets/goostle.png"
         text-align: center;
     }
 
+    .big-500 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(0.25rem, 1vw, 0.75rem);
+        margin-bottom: 2rem;
+        user-select: none;
+    }
+
+    .digit {
+        font-size: clamp(6rem, 20vw, 16rem);
+        font-weight: 900;
+        line-height: 1;
+        background: linear-gradient(
+            180deg,
+            #ff6b35 0%,
+            var(--color-status-dnd) 60%,
+            #8b0000 100%
+        );
+        background-size: 100% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 clamp(15px, 4vw, 40px) rgba(237, 66, 69, 0.4));
+    }
+
     .main-heading {
-        font-size: 4rem;
+        font-size: clamp(2rem, 5vw, 4rem);
         font-weight: 750;
         color: white;
         line-height: 1;
     }
 
     .main-heading-sub {
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
         color: white;
         opacity: 0.7;
         margin-bottom: 4rem;
         line-height: 1.5;
-    }
-
-    .goostle-hint {
-        font-size: 1.2rem;
-        color: white;
-        opacity: 0.7;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .goostle {
-        width: 10rem;
-        opacity: 100%;
-        display: block;
-        margin: 0 auto;
-        transform: rotate(-20deg) scaleX(-1);
-        border-bottom: 5px solid white;
     }
 </style>

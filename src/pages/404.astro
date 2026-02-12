@@ -2,20 +2,19 @@
 import Navbar from "../components/layout/Navbar.astro"
 import MarketingLayout from "../layouts/MarketingLayout.astro"
 import Footer from "../components/layout/Footer.astro"
-import Numbers from "../assets/404.svg"
 ---
 
-<MarketingLayout title="Stoat: 404" backgroundColor="#000000">
+<MarketingLayout title="Stoat: 404" backgroundColor="var(--color-bg-primary)">
     <Navbar />
 
     <div class="spacer"></div>
     <div class="lr-pad">
         <div class="center">
-            <img
-                src={Numbers.src}
-                alt="404"
-                class="goostle"
-            />
+            <div class="big-404" aria-hidden="true">
+                <span class="digit">4</span>
+                <span class="digit">0</span>
+                <span class="digit">4</span>
+            </div>
             <h1 class="main-heading">Page not found</h1>
             <p class="main-heading-sub">
                 We couldn't find the page you were looking for. Maybe it's a
@@ -43,33 +42,45 @@ import Numbers from "../assets/404.svg"
         text-align: center;
     }
 
+    .big-404 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(0.25rem, 1vw, 0.75rem);
+        margin-bottom: 2rem;
+        user-select: none;
+    }
+
+    .digit {
+        font-size: clamp(6rem, 20vw, 16rem);
+        font-weight: 900;
+        line-height: 1;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            var(--color-secondary) 50%,
+            var(--color-primary) 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 clamp(15px, 4vw, 40px) rgba(0, 216, 255, 0.3));
+    }
+
     .main-heading {
-        font-size: 4rem;
+        font-size: clamp(2rem, 5vw, 4rem);
         font-weight: 750;
         color: white;
         line-height: 1;
     }
 
     .main-heading-sub {
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
         color: white;
         opacity: 0.7;
         margin-bottom: 4rem;
         line-height: 1.5;
-    }
-
-    .goostle-hint {
-        font-size: 1.2rem;
-        color: white;
-        opacity: 0.7;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .goostle {
-        height: 20rem;
-        opacity: 100%;
-        display: block;
-        margin: 0 auto;
     }
 </style>

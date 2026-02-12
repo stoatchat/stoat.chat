@@ -1,6 +1,6 @@
 ---
 import StyleConstants, {
-    COLOUR_ULTRA_PINK,
+    COLOR_PRIMARY,
 } from "../components/layout/StyleConstants.astro"
 
 interface Props {
@@ -25,9 +25,9 @@ const { title, backgroundColor } = Astro.props
             content="Stoat, Revolt, chat, messaging, open-source, community, customisation"
         />
         <meta name="author" content="Stoat" />
-        <meta name="theme-color" content={COLOUR_ULTRA_PINK} />
+        <meta name="theme-color" content={COLOR_PRIMARY} />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon-stoat.svg" />
 		<link rel="alternate" type="application/rss+xml" title="Stoat Updates Feed" href="https://stoat.chat/updates/blog-feed.xml">
 		<link rel="alternate" type="application/rss+xml" title="Stoat Changelog Feed" href="https://stoat.chat/updates/changelog-feed.xml">
         <meta name="generator" content={Astro.generator} />
@@ -44,7 +44,7 @@ const { title, backgroundColor } = Astro.props
         overflow-x: hidden;
         margin: 0;
         padding: 0;
-        background-color: var(--background-color, black);
+        background-color: var(--background-color, var(--color-bg-primary));
         color: var(--foreground-color, white);
         font-family: var(--typeface-primary);
         font-feature-settings: var(--typeface-primary-ffs);
@@ -65,6 +65,6 @@ const { title, backgroundColor } = Astro.props
     }
 
     ::-webkit-scrollbar-thumb {
-        background: var(--colour-ultra-pink);
+        background: var(--color-primary);
     }
 </style>

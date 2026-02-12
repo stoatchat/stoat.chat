@@ -40,7 +40,7 @@ if (changelogsOnlyForProduct) {
 }
 ---
 
-<Layout title="Updates from Stoat" backgroundColor="#000000">
+<Layout title="Updates from Stoat" backgroundColor="var(--color-bg-primary)">
     <Navbar />
     <div class="spacer"></div>
     <div class="lr-pad">
@@ -181,7 +181,7 @@ if (changelogsOnlyForProduct) {
 
     .article-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
         gap: 2rem;
     }
 
@@ -223,7 +223,7 @@ if (changelogsOnlyForProduct) {
         text-align: center;
         font-size: 1.2rem;
         font-weight: 500;
-        color: var(--colour-ultra-pink);
+        color: var(--color-primary);
         text-decoration: none;
     }
 
@@ -253,7 +253,7 @@ if (changelogsOnlyForProduct) {
         filter: grayscale(1);
         transition: filter 0.2s var(--easing);
 
-        &:hover, 
+        &:hover,
         &.selected {
             filter: none;
         }

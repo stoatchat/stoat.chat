@@ -1,68 +1,77 @@
 ---
 import "@fontsource/fragment-mono/400.css"
-import "../../assets/inter/inter.css"
+import "../../assets/satoshi/satoshi.css"
 
-export const COLOUR_ULTRA_PINK = "#8C24EC" // Also change below
+export const COLOR_PRIMARY = "#00d8ff" // Also change below
 ---
 
 <style is:global lang="scss">
     :root {
-        --typeface-primary: "Inter", sans-serif;
-        --typeface-primary-ffs: "zero" 1,"cv01" 1,"cv02" 1,"cv05" 1,"cv07" 1,"cv08" 1,"cv10" 1;
+        --typeface-primary: "Satoshi", sans-serif;
+        --typeface-primary-ffs: "ss02" 1, "ss03" 1;
         --typeface-mono: "Fragment Mono", monospace;
         --easing: cubic-bezier(0.33, 1, 0.68, 1);
-        --colour-ultra-pink: #8C24EC; /* Also change above */
-        --colour-ultra-pink-light: #9D4EDD;
         -webkit-tap-highlight-color: transparent;
 
-        // Primaries
-        --cpx: #8C24EC;
-        --cpy: #C7F464;
-        
-        // Primaries shades
-        --cpx10: #F3E8FF;
-        --cpx20: #E0BBFF;
-        --cpx30: #C892FF;
-        --cpx40: #9D4EDD;
-        --cpx70: #52057B;
-        --cpy40: #B5E48C;
-        --cpy70: #6A994E;
+        // Brand colors
+        --color-primary: #00d8ff;
+        --color-secondary: #00ffd8;
 
-        // Greys
-        --cg10: #0D0D0D;
-        --cg20: #1A1A1A;
-        --cg30: #2A2A2A;
-        --cg40: #404040;
-        --cg50: #666666;
-        --cg60: #888888;
-        --cg70: #A8A8A8;
-        --cg80: #C4C4C4;
-        --cg90: #E0E0E0;
-        --cgA0: #F5F5F5;
+        // Background colors
+        --color-bg-darkest: #110E17;
+        --color-bg-darker: #191523;
+        --color-bg-dark: #221C2E;
+        --color-bg-primary: #2A233A;
+        --color-bg-light: #322A46;
+        --color-bg-lighter: #3B3151;
+        --color-bg-lightest: #43385D;
 
-        // User Status - Not used in the website but here for reference
-        --cso: #3BA55C;
-        --csi: #FAA61A;
-        --csd: #ED4245;
-        --csf: #5865F2;
-        --csx: #747F8D;
+        // Primary color shades
+        --color-primary-100: #E0F8FF;
+        --color-primary-200: #A3ECFF;
+        --color-primary-300: #5CE1FF;
+        --color-primary-400: #00C0E0;
+        --color-primary-700: #007A91;
+
+        // Secondary color shades
+        --color-secondary-400: #00D6B5;
+        --color-secondary-700: #00806C;
+
+        // Greyscale
+        --color-gray-100: #0A0A0A;
+        --color-gray-200: #1A1A1A;
+        --color-gray-300: #2A2A2A;
+        --color-gray-400: #404040;
+        --color-gray-500: #666666;
+        --color-gray-600: #888888;
+        --color-gray-700: #A8A8A8;
+        --color-gray-800: #C4C4C4;
+        --color-gray-900: #E0E0E0;
+        --color-gray-1000: #F5F5F5;
+
+        // User status colors
+        --color-status-online: #3BA55C;
+        --color-status-idle: #FAA61A;
+        --color-status-dnd: #ED4245;
+        --color-status-focus: #5865F2;
+        --color-status-offline: #747F8D;
 
         // Auxiliary for dataviz
-        --caa: #FF6B35;
-        --cab: #FF006E;
-        --cac: #00D9FF;
-        --cad: #FFD23F;
-        --cae: #00FFB7;
+        --color-chart-1: #FF6B35;
+        --color-chart-2: #FF006E;
+        --color-chart-3: #00D9FF;
+        --color-chart-4: #FFD23F;
+        --color-chart-5: #00FFB7;
 
-        // Success, warning, danger
-        --cts: var(--cae);
-        --ctw: var(--cad);
-        --ctd: var(--csd);
+        // Semantic colors
+        --color-success: var(--color-status-online);
+        --color-warning: var(--color-status-idle);
+        --color-danger: var(--color-status-dnd);
     }
     
     @supports (font-variation-settings: normal) {
         :root {
-            --typeface-primary: "InterVariable", sans-serif;
+            --typeface-primary: "SatoshiVariable", sans-serif;
             font-optical-sizing: auto;
         }
     }

@@ -1,108 +1,258 @@
 ---
 import Navbar from "../components/layout/Navbar.astro";
 import MarketingLayout from "../layouts/MarketingLayout.astro";
-import AboutHero from "../components/about/AboutHero.astro";
-import AboutLeftRightLayout from "../components/about/AboutLeftRightLayout.astro";
-import Calendar2021 from "../assets/about/calendar-2021.svg";
-import FossLove from "../assets/about/foss-love.svg";
-import Mission from "../assets/about/mission.svg";
-import AboutQuote from "../components/about/AboutQuote.astro";
-import AboutStats from "../components/about/AboutStats.astro";
 import Footer from "../components/layout/Footer.astro";
-import AboutConclusionSection from "../components/about/AboutConclusionSection.astro";
+import Cta from "../components/index/Cta_S.astro";
 ---
 
-<MarketingLayout title="About Stoat" backgroundColor="#000000">
+<MarketingLayout title="About Stoat" backgroundColor="var(--color-bg-primary)">
   <Navbar />
-  <AboutHero />
-  <div class="lr-pad">
-    <AboutLeftRightLayout title="Our Story">
-      <Fragment slot="a">
+
+  <section class="hero">
+    <h1>We build Stoat.</h1>
+    <p>
+      An open-source chat platform for communities that want
+      something better.
+    </p>
+  </section>
+
+  <section class="story">
+    <div class="story-inner">
+      <h2>Why we're here</h2>
+      <p>
+        Most chat platforms ship features to move metrics, not because
+        they're actually useful. Your attention is the product. Your data
+        is the revenue stream. We got tired of it.
+      </p>
+      <p>
+        Stoat started in 2021 as a simple idea: build a chat app that
+        works well and doesn't have an ulterior motive. Open source from
+        day one, no ads, no hidden agenda. Just software that works for
+        the people using it.
+      </p>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="principles-grid">
+      <div class="principle-card">
+        <h3>Open source</h3>
         <p>
-          Stoat started in 2021 as a small project by a group of friends who
-          wanted to create a chat app that was truly built with the user in
-          mind. We wanted to create a space where people could come together,
-          chat, and build communities, in a way that was open, secure, and
-          customisable.
+          Every line of code is public. You can read it, audit it, fork it,
+          or contribute to it. The software that handles your conversations
+          shouldn't be a black box.
         </p>
-      </Fragment>
-      <Fragment slot="b">
-        <img
-          src={Calendar2021.src}
-          alt="Clipart of a calendar with the year 2021 and a message bubble"
-          width="50%"
-          class="center about-image"
-        />
-      </Fragment>
-    </AboutLeftRightLayout>
-    <AboutLeftRightLayout title="Open-Source as a Core Value" reverse>
-      <Fragment slot="a">
+      </div>
+      <div class="principle-card">
+        <h3>Privacy by default</h3>
         <p>
-          From the very beginning, we knew that we wanted to make Stoat
-          open-source. We believe that open-source software is the best way to
-          build a community around a product, and we wanted to give our users
-          the ability to see exactly what we were doing with their data.
+          We don't sell your data. Your messages belong to you.
+          That's not a feature, it's the bare minimum, and
+          most platforms don't even do that.
         </p>
-      </Fragment>
-      <Fragment slot="b">
-        <img
-          src={FossLove.src}
-          alt="Clipart of the text FOSS followed by an ASCII heart, encased in curly braces"
-          width="50%"
-          class="center about-image"
-        />
-      </Fragment>
-    </AboutLeftRightLayout>
-    <AboutLeftRightLayout title="Here's the Plan">
-      <Fragment slot="a">
+      </div>
+      <div class="principle-card">
+        <h3>Built to be yours</h3>
         <p>
-          We believe that chat apps should be more than just a way to send
-          messages. They should be a place where people can come together, share
-          ideas, and build communities. We want to create a chat app that is
-          truly built with the user in mind.
+          Stoat is designed to get out of your way and
+          let you make it work however you need it to.
+          Your tools should bend to you, not the other way around.
         </p>
-      </Fragment>
-      <Fragment slot="b">
-        <img
-          src={Mission.src}
-          alt="Clipart of a planet with a flag on it"
-          width="50%"
-          class="center about-image"
-        />
-      </Fragment>
-    </AboutLeftRightLayout>
-  </div>
-  <div class="spacer"></div>
-  <AboutQuote
-    title="Take it from the Founder"
-    quote="My vision is chat software that doesn't suck."
-    author="insert"
-  />
-  <AboutStats />
-  <AboutConclusionSection />
-  <div class="spacer"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="numbers">
+    <div class="numbers-grid">
+      <div class="number">
+        <span class="number-value">1M+</span>
+        <span class="number-label">Users</span>
+      </div>
+      <div class="number-divider"></div>
+      <div class="number">
+        <span class="number-value">150k+</span>
+        <span class="number-label">Lines of code</span>
+      </div>
+      <div class="number-divider"></div>
+      <div class="number">
+        <span class="number-value">100%</span>
+        <span class="number-label">Open source</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>That's us. Want in?</h2>
+    <Cta />
+  </section>
+
   <Footer />
 </MarketingLayout>
 
-<style>
-  .lr-pad {
+<style lang="scss">
+  .hero {
+    text-align: center;
+    padding: 14rem 2rem 8rem;
+    max-width: 720px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin: 0 0 1.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      opacity: 0.7;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      padding: 10rem 1.5rem 5rem;
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .story {
+    max-width: min(90ch, 90vw);
+    margin: 0 auto;
+    padding: 6rem 2rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin: 0 0 2.5rem;
+    }
+
+    p {
+      font-size: 1.35rem;
+      line-height: 1.8;
+      opacity: 0.85;
+      margin: 0 0 1.75rem;
+      font-weight: 450;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .principles {
     max-width: min(130ch, 90vw);
     margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .principles-grid {
     display: grid;
-    gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .spacer {
-    height: 6rem;
+  .principle-card {
+    padding: 2.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.65;
+      margin: 0;
+      font-weight: 450;
+    }
   }
 
-  .center {
-    display: block;
+  .numbers {
+    max-width: min(130ch, 90vw);
     margin: 0 auto;
+    padding: 6rem 2rem;
   }
 
-  .about-image {
-    pointer-events: none;
-    user-select: none;
+  .numbers-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+
+  .number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .number-value {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .number-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.45;
+  }
+
+  .number-divider {
+    width: 1px;
+    height: 3.5rem;
+    background: rgba(255, 255, 255, 0.1);
+
+    @media (max-width: 768px) {
+      width: 3rem;
+      height: 1px;
+    }
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 4rem 2rem 10rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 750;
+      margin: 0;
+      line-height: 1.2;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
   }
 </style>

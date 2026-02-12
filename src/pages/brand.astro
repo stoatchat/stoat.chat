@@ -1,0 +1,309 @@
+---
+import Navbar from "../components/layout/Navbar.astro";
+import MarketingLayout from "../layouts/MarketingLayout.astro";
+import Footer from "../components/layout/Footer.astro";
+import StoatWordmark from "../assets/Stoat_White.svg";
+---
+
+<MarketingLayout title="Stoat Brand" backgroundColor="var(--color-bg-primary)">
+  <Navbar />
+
+  <section class="hero">
+    <h1>Brand</h1>
+    <p>
+      Everything you need to represent Stoat.
+    </p>
+  </section>
+
+  <section class="logo-showcase">
+    <h2>The Logo</h2>
+    <div class="logo-display">
+      <img src={StoatWordmark.src} alt="Stoat wordmark" />
+    </div>
+    <p>
+      Our logo pairs the Stoat wordmark with Toast, the stoat. They're the
+      face of the project and show up across the app, our site, and
+      pretty much everywhere else. You'll find them in the icon too.
+    </p>
+  </section>
+
+  <section class="toast-section">
+    <h2>Meet Toast</h2>
+    <div class="toast-display">
+      <img src="/favicon-stoat.svg" alt="Toast, the stoat on the Stoat logo." />
+    </div>
+    <p>
+      Toast is the cute mascot on our logo. They're a stoat (obviously),
+      and they're the newest member of the team. You'll spot them in the
+      logo, the app icon, and wherever Stoat shows up. They're friendly,
+      they're recognisable, and we'd appreciate it if you treat them well.
+    </p>
+  </section>
+
+  <section class="resources">
+    <h2>Resources</h2>
+    <div class="resources-grid">
+      <a
+        href="https://outline.stoatinternal.com/s/855e3925-81d7-44d7-83d3-b0c9567f813e"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="resource-card"
+      >
+        <h3>Brand Guidelines</h3>
+        <p>
+          Colours, typography, spacing, and usage rules. Read this before
+          using our assets anywhere.
+        </p>
+        <span class="resource-link">View guidelines &rarr;</span>
+      </a>
+      <a
+        href="https://nextcloud.stoatinternal.com/s/fwaiFZiWEjdE3jR"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="resource-card"
+      >
+        <h3>Brand Asset Pack / Press Kit</h3>
+        <p>
+          Logos, icons, and wordmarks in all the formats you need. SVG, PNG,
+          and ready to use.
+        </p>
+        <span class="resource-link">Download assets &rarr;</span>
+      </a>
+      <a
+        href="https://outline.stoatinternal.com/s/855e3925-81d7-44d7-83d3-b0c9567f813e/doc/stoat-brand-assets-legal-notice-ExYFzQboG1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="resource-card"
+      >
+        <h3>Legal Notice</h3>
+        <p>
+          Trademark info and the legal terms around using Stoat brand
+          assets.
+        </p>
+        <span class="resource-link">Read notice &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="usage-note">
+    <h2>A quick note on usage</h2>
+    <p>
+      The Stoat name, logo, and Toast are trademarks. You're welcome
+      to use our assets to reference Stoat&mdash;in articles, videos, community
+      projects, and integrations. We just ask that you don't alter the logos,
+      use them to imply endorsement, pass them off as your own, and other things
+      that are mentioned in the full document. If something feels like a grey area,
+      check the guidelines or reach out. We're happy to help.
+    </p>
+  </section>
+
+  <Footer />
+</MarketingLayout>
+
+<style lang="scss">
+  .hero {
+    text-align: center;
+    padding: 14rem 2rem 8rem;
+    max-width: 720px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin: 0 0 1.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      opacity: 0.7;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      padding: 10rem 1.5rem 5rem;
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .logo-showcase {
+    max-width: min(90ch, 90vw);
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin: 0 0 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.75;
+      opacity: 0.75;
+      margin: 0;
+      font-weight: 450;
+    }
+  }
+
+  .logo-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 3rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    img {
+      height: 128px;
+      width: auto;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+  .toast-section {
+    max-width: min(90ch, 90vw);
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin: 0 0 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.75;
+      opacity: 0.75;
+      margin: 0;
+      font-weight: 450;
+    }
+  }
+
+  .toast-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    img {
+      height: 120px;
+      width: auto;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+  .resources {
+    max-width: min(130ch, 90vw);
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin: 0 0 2.5rem;
+    }
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .resource-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.65;
+      margin: 0;
+      font-weight: 450;
+      flex: 1;
+    }
+  }
+
+  .resource-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .usage-note {
+    max-width: min(90ch, 90vw);
+    margin: 0 auto;
+    padding: 2rem 2rem 10rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin: 0 0 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.75;
+      opacity: 0.75;
+      margin: 0;
+      font-weight: 450;
+    }
+  }
+</style>

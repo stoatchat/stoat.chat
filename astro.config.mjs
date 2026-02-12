@@ -37,6 +37,10 @@ export default defineConfig({
             status: 307,
             destination: "/updates/[slug]",
         },
+        "/updates/long-live-stoat": {
+            status: 307,
+            destination: "/updates/celebrating-one-million",
+        },
         "/updates/500K-users": {
             // DO! NOT! EVER! USE! UPPERCASE! CHARACTERS! IN! SLUGS!
             status: 307,

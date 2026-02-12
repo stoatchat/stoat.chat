@@ -1,6 +1,6 @@
 ---
 import StyleConstants, {
-    COLOUR_ULTRA_PINK,
+    COLOR_PRIMARY,
 } from "../components/layout/StyleConstants.astro"
 import Footer from "../components/layout/Footer.astro"
 import BlogHeader from "../components/layout/BlogHeader.astro"
@@ -39,9 +39,9 @@ const {
             content="Stoat, Revolt, chat, messaging, open-source, community, customisation"
         />
         <meta name="author" content="Stoat" />
-        <meta name="theme-color" content={COLOUR_ULTRA_PINK} />
+        <meta name="theme-color" content={COLOR_PRIMARY} />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon-stoat.svg" />
         <meta name="generator" content={Astro.generator} />
 		<link rel="alternate" type="application/rss+xml" title="Stoat Updates Feed" href="https://stoat.chat/updates/blog-feed.xml">
 		<link rel="alternate" type="application/rss+xml" title="Stoat Changelog Feed" href="https://stoat.chat/updates/changelog-feed.xml">
@@ -162,7 +162,7 @@ const {
         overflow-x: hidden;
         margin: 0;
         padding: 0;
-        background-color: var(--backgroundColor, black);
+        background-color: var(--backgroundColor, var(--color-bg-primary));
         color: var(--foreground-color, white);
         font-family: var(--typeface-primary);
         font-feature-settings: var(--typeface-primary-ffs);
@@ -183,6 +183,6 @@ const {
     }
 
     ::-webkit-scrollbar-thumb {
-        background: var(--colour-ultra-pink);
+        background: var(--color-primary);
     }
 </style>

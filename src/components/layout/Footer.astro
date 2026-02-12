@@ -1,5 +1,5 @@
 ---
-import WordmarkWhite from "../../assets/stoat-white.svg"
+import WordmarkWhite from "../../assets/Stoat_White.svg"
 ---
 
 <footer>
@@ -33,6 +33,7 @@ import WordmarkWhite from "../../assets/stoat-white.svg"
             <span>Team</span>
             <a href="/about">About</a>
             <a href="/updates">Blog and Changelogs</a>
+            <a href="/brand">Brand Assets and Press Kit</a>
             <a href="https://support.stoat.chat/contact" target="_blank"
                 >Contact</a
             >
@@ -58,21 +59,18 @@ import WordmarkWhite from "../../assets/stoat-white.svg"
 <style lang="scss">
     footer {
         color: white;
-        background-color: var(--cg10);
-        background-size: cover;
-        background-position: center;
-        background-opacity: 0.5;
-        padding: 0;
-        padding: 5rem 10rem;
-        border-top: 5px solid;
-        border-image: linear-gradient(
-                to right,
-                #ff247f 0,
-                #bf4eff 30%,
-                #3fa8ff 65%,
-                #5fffb1 100%
-            )
-            1;
+        padding: 3rem;
+        max-width: min(90vw, 1300px);
+        margin: 2rem auto;
+        border-radius: 2rem;
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+
+        background: rgba(42, 35, 58, 0.7);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
         transition:
             padding 0.5s var(--easing),
             flex-direction 0.5s var(--easing);
@@ -83,18 +81,24 @@ import WordmarkWhite from "../../assets/stoat-white.svg"
         align-items: flex-start;
 
         @media (max-width: 1600px) {
-            padding: 5rem 2rem;
+            padding: 3rem 2rem;
         }
         @media (max-width: 1350px) {
             flex-direction: column;
             justify-content: center;
             gap: 2rem;
         }
+        @media (max-width: 768px) {
+            max-width: calc(100% - 1rem);
+            margin: 1rem 0.5rem;
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
+        }
 
         .copyright-section {
             .wordmark {
-                width: 140px;
-                height: auto;
+                height: 50px;
+                width: auto;
             }
 
             .copyright {
@@ -105,11 +109,12 @@ import WordmarkWhite from "../../assets/stoat-white.svg"
         }
 
         .links-section {
+            font-size: 0.9rem;
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
             align-items: flex-start;
-            gap: 2.5rem;
+            gap: 2rem;
 
             @media (max-width: 1350px) {
                 flex-wrap: wrap;
@@ -129,27 +134,24 @@ import WordmarkWhite from "../../assets/stoat-white.svg"
             .links {
                 display: flex;
                 flex-direction: column;
-                gap: 0.75rem;
+                gap: .75rem;
 
                 span {
                     transition:
                         margin-bottom 0.2s var(--easing),
                         font-weight 0.2s var(--easing);
-                    font-weight: 600;
-                    margin-bottom: 1rem;
+                    margin-bottom: 0.5rem;
+                    opacity: 0.75;
                 }
 
                 a:link,
                 a:visited {
                     color: inherit;
-                    transition:
-                        opacity 0.2s var(--easing),
-                        filter 0.2s var(--easing);
+                    transition: color 0.2s var(--easing);
                     text-decoration: none;
 
                     &:hover {
-                        opacity: 0.75;
-                        filter: brightness(0.7);
+                        color: var(--color-primary);
                     }
                 }
             }

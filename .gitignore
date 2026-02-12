@@ -27,4 +27,8 @@ pnpm-debug.log*
 dummydata/
 
 # font files
-# *.woff2
+src/assets/satoshi/*
+!src/assets/satoshi/satoshi.css
+
+# local files
+*.local.*
