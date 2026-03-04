@@ -8,7 +8,7 @@ export default class Consts {
     static readonly FLATHUB_URL =
         "https://flathub.org/apps/chat.revolt.RevoltDesktop" as const;
     static readonly TESTFLIGHT_URL =
-        "https://testflight.apple.com/join/mGSCJe13" as const;
+        "https://testflight.apple.com/join/NVYaEtJD" as const;
     static readonly GITHUB_URL =
         "https://github.com/stoatchat/for-desktop/releases/" as const;
     static readonly WINDOWS_BUILD_URL =
