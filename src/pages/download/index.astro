@@ -61,11 +61,11 @@ import Consts from "../../lib/consts";
           Download Stoat for macOS.<br /><br />
           If you receive the error <strong
             >"Stoat" is damaged and can't be opened</strong
-          >: <br /> Open System Preference &gt; Privacy & Security then select "Open
-          Anyway" for the app. If the option is not present, redownload the app,
-          open the Terminal app using Spotlight, then paste <code
+          >: <br /> Open System Preferences &gt; Privacy & Security then select "Open
+          Anyway" for the app. If the option is not present, redownload the app, open
+          the Terminal app using Spotlight, then paste <code
             >cd ~/Downloads && xattr -d com.apple.quarantine Stoat.app</code
-          > and press enter.
+          >, press Enter, then relaunch the app.
         </p>
       </DownloadTile>
       <DownloadTile
@@ -97,10 +97,16 @@ import Consts from "../../lib/consts";
             url: Consts.PLAYSTORE_URL,
             primary: true,
           },
+          {
+            name: "Aurora Store (FOSS)",
+            url: Consts.AURORASTORE_URL,
+            primary: false,
+          },
         ]}
       >
         <p slot="description" class="description">
-          Download Stoat for Android on the Google Play Store.<br />
+          Download Stoat for Android on the Google Play Store and Aurora Store.<br
+          />
           Full tablet and foldable support included.<br />
           Android 8.0 and above.
         </p>
