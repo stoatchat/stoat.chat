@@ -5,6 +5,8 @@ export default class Consts {
         "ms-windows-store://pdp/?ProductId=9nmtvmrj7n1k" as const;
     static readonly PLAYSTORE_URL =
         "https://play.google.com/store/apps/details?id=chat.revolt" as const;
+    static readonly AURORASTORE_URL =
+        "https://f-droid.org/packages/com.aurora.store/" as const;
     static readonly FLATHUB_URL =
         "https://flathub.org/apps/chat.revolt.RevoltDesktop" as const;
     static readonly TESTFLIGHT_URL =
