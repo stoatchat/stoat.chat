@@ -31,5 +31,8 @@ jobs:
           tags: |
             registry.stoatinternal.com/stoat-marketing/website:${{ github.sha }}
             registry.stoatinternal.com/stoat-marketing/website:latest
+          build-args: |
+            SATOSHI_WOFF2_URL=${{ secrets.SATOSHI_WOFF2_URL }}
+            SATOSHI_ITALIC_WOFF2_URL=${{ secrets.SATOSHI_ITALIC_WOFF2_URL }}
           cache-from: type=gha
           cache-to: type=gha,mode=max

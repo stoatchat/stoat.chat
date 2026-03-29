@@ -11,7 +11,12 @@ FROM base AS build-deps
 RUN pnpm install --frozen-lockfile
 
 FROM build-deps AS build
+ARG SATOSHI_WOFF2_URL
+ARG SATOSHI_ITALIC_WOFF2_URL
 COPY . .
+RUN mkdir -p src/assets/satoshi && \
+    curl -fsSL -o src/assets/satoshi/Satoshi-Variable.woff2 "$SATOSHI_WOFF2_URL" && \
+    curl -fsSL -o src/assets/satoshi/Satoshi-VariableItalic.woff2 "$SATOSHI_ITALIC_WOFF2_URL"
 RUN pnpm build
 
 FROM base AS runtime
