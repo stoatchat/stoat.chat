@@ -29,7 +29,7 @@ jobs:
           context: .
           push: true
           tags: |
-            https://registry.stoatinternal.com/stoat-marketing/website:${{ github.sha }}
-            https://registry.stoatinternal.com/stoat-marketing/website:latest
+            registry.stoatinternal.com/stoat-marketing/website:${{ github.sha }}
+            registry.stoatinternal.com/stoat-marketing/website:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
