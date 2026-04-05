@@ -1,18 +1,27 @@
 ---
-import Cta from "./Cta_S.astro"
-import productImg from "../../assets/index/product.png"
+import { Image } from "astro:assets";
+import Cta from "./Cta_S.astro";
+import productImg from "../../assets/index/product.png";
 ---
 
 <header>
     <div class="hero-card">
         <div class="text-part">
-            <h1 class="tagline">Find your<br/>community.</h1>
-            <h2 class="subtagline">Stoat is the chat app for friends and communities that finally works the way you always wished it would.</h2>
+            <h1 class="tagline">Find your<br />community.</h1>
+            <h2 class="subtagline">
+                Stoat is the chat app for friends and communities that finally works the way you always wished it would.
+            </h2>
             <div class="cta">
-                <Cta/>
+                <Cta />
             </div>
         </div>
-        <img src={productImg.src} alt="Stoat desktop client" width={productImg.width} height={productImg.height} />
+        <Image
+            src={productImg}
+            alt="Stoat desktop client"
+            fetchpriority={"high"}
+            widths={[430, 700, 1200, 1400]}
+            sizes={`(max-width: 480px) 430px, (max-width: 768px) 700px, (max-width: 1279px) 1200px, 1400px`}
+        />
     </div>
 </header>
 <style lang="scss">
@@ -23,7 +32,7 @@ import productImg from "../../assets/index/product.png"
     }
 
     .hero-card {
-        border-radius: 2rem;
+        border-radius: clamp(0.5rem, 2vw, 2rem);
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow:
@@ -35,7 +44,6 @@ import productImg from "../../assets/index/product.png"
         width: 100%;
         height: auto;
         display: block;
-        border-radius: .7rem;
     }
 
     .text-part {
