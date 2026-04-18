@@ -87,9 +87,13 @@ const {
 </html>
 <style lang="scss" define:vars={{ backgroundColor, coverImageURL }}>
     .blog-header {
-        padding-top: 15rem;
+        padding-top: 10rem;
         max-width: min(130ch, 90vw);
         margin: 0 auto;
+
+        @media (max-width: 768px) {
+            padding-top: 7rem;
+        }
     }
 
     .blog-meta {
@@ -135,10 +139,17 @@ const {
                 var(--backgroundColor) 60%
             ),
             var(--background-image-decl) center / cover no-repeat;
-        backdrop-filter: blur(1rem);
+        filter: blur(3rem);
+        transform: scale(1.05);
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
+        z-index: -1;
+
+        @media (max-width: 768px) {
+            height: 70vh;
+        }
     }
 
     .inline-cover-image {
