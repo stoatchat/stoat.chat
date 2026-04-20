@@ -1,0 +1,61 @@
+---
+import type { StatusPage } from '../../lib/status'
+import { impactIntoString } from "../../lib/status"
+
+interface Props {
+  page: StatusPage
+}
+
+const { page } = Astro.props
+
+const impact = impactIntoString(page?.current_incident_impact ?? "none")
+---
+<a href="https://status.stoat.chat">
+    <div class:list={["status-chip", page.current_incident_impact.replaceAll("_", "-")]}>
+        <div class="status-dot"></div>
+        {impact}
+    </div>
+</a>
+
+<style lang="scss">
+.status-chip {
+    margin-top: 1rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .75ch;
+    border-radius: 9999px;
+    padding: .5rem 1rem;
+
+    .status-dot::before {
+        display: block;
+        content: " ";
+        background-color: currentColor;
+        width: 8px;
+        height: 8px;
+        aspect-ratio: 1;
+        margin: auto;
+        border-radius: 9999px;
+    }
+
+    background-color: var(--color-bg-dark);
+    color: var(--color-status-offline);
+
+    &.degraded-performance, &.partial-outage {
+        color: var(--color-status-idle);
+    }
+
+    &.operational {
+        color: var(--color-status-online);
+    }
+
+    &.major-outage {
+        color: var(--color-status-dnd);
+    }
+
+    &.maintenance {
+        color: var(--color-status-focus);
+    }
+}
+</style>
