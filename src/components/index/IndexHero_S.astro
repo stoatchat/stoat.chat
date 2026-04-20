@@ -3,6 +3,7 @@ import Cta from "./Cta_S.astro"
 import HeroTagline from "../../assets/scalable/HeroTagline.png"
 import HeroTagline2x from "../../assets/scalable/HeroTagline@2x.png"
 import HeroTagline3x from "../../assets/scalable/HeroTagline@3x.png"
+import productImg from "../../assets/index/product.png"
 ---
 
 <header>
@@ -13,6 +14,7 @@ import HeroTagline3x from "../../assets/scalable/HeroTagline@3x.png"
         class="tagline"
     />
     <Cta />
+    <img src={productImg.src} alt="Stoat desktop client" width={productImg.width} height={productImg.height} />
 </header>
 <style lang="scss">
     header {
@@ -35,5 +37,14 @@ import HeroTagline3x from "../../assets/scalable/HeroTagline@3x.png"
         text-align: center;
         opacity: 0.9;
         line-height: 1.25;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: .7rem;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 </style>

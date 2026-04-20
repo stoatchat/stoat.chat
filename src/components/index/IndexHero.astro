@@ -29,6 +29,12 @@ import productImg from "../../assets/index/product.png"
         box-shadow:
             0 16px 64px rgba(0, 0, 0, 0.4),
             0 0 0 1px rgba(255, 255, 255, 0.04);
+
+        @media screen and (max-width: 768px) {
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
     }
 
     .hero-card img {
@@ -65,6 +71,23 @@ import productImg from "../../assets/index/product.png"
         font-weight: 400;
         letter-spacing: 0.05em;
         max-width: 40ch;
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding-top: 2rem;
+        }
+
+        .hero-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text-part {
+            align-items: center;
+            text-align: center;
+        }
     }
 
     .cta {

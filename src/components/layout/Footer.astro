@@ -1,5 +1,9 @@
 ---
 import WordmarkWhite from "../../assets/Stoat_White.svg"
+import { getStatusPage, impactIntoString } from "../../lib/status";
+import StatusChip from "./StatusChip.astro";
+
+const statusPage = await getStatusPage()
 ---
 
 <footer>
@@ -8,6 +12,7 @@ import WordmarkWhite from "../../assets/Stoat_White.svg"
         <div class="copyright">
             © Revolt Platforms Ltd, {new Date().getFullYear()}
         </div>
+        {statusPage && <StatusChip page={statusPage} />}
     </div>
     <div class="links-section">
         <div class="links">
