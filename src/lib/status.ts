@@ -41,10 +41,14 @@ export async function getStatusPage(): Promise<StatusPage | null> {
     }
 
     const response = await fetch(
-      `https://api.phare.io/uptime/status-pages/${process.env.PHARE_STATUSPAGE_ID}/current-status`,
+      `https://api.phare.io/uptime/status-pages/${
+        process.env.PHARE_STATUSPAGE_ID ?? import.meta.env.PHARE_STATUSPAGE_ID
+      }/current-status`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.PHARE_API_KEY}`,
+          Authorization: `Bearer ${
+            process.env.PHARE_API_KEY ?? import.meta.env.PHARE_API_KEY
+          }`,
         },
       }
     );
