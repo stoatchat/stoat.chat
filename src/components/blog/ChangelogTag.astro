@@ -13,14 +13,14 @@ const backgroundColor = {
     android: "#3ddc84",
     ios: "#1b74f9",
     api: "#505463",
-    all: "#8C24EC",
+    all: "var(--color-primary)",
 }[product]
 const foregroundColor = {
     web: "black",
     android: "black",
     ios: "white",
     api: "white",
-    all: "white",
+    all: "var(--color-bg-primary)",
 }[product]
 const productName = {
     web: "Web and Desktop",
@@ -51,6 +51,7 @@ const longProductName = {
         background-color: var(--backgroundColor);
         color: var(--foregroundColor);
         letter-spacing: 0.05em;
+        font-weight: 500;
         box-shadow: 0 10px 50px 0 rgb(0 0 0 / 0.3);
         user-select: none;
 

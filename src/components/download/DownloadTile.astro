@@ -5,13 +5,14 @@ import DownloadButton from "./DownloadButton.astro"
 interface Props {
     name: string
     stores: Store[]
+    beta?: boolean
 }
 
-const { name, stores } = Astro.props
+const { name, stores, beta = false } = Astro.props
 ---
 
 <div class="dl-tile">
-    <h2>{name}</h2>
+    <h2>{name} {beta && <span class="beta-badge">Early Access</span>}</h2>
     <slot name="description" />
     <div class="grow"></div>
     <div class="cta">
@@ -46,6 +47,23 @@ const { name, stores } = Astro.props
             letter-spacing: 0.03em;
             color: white;
             margin: 0;
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .beta-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            border-radius: 9999px;
+            background-color: var(--color-bg-lightest);
+            color: white;
+            align-self: center;
         }
     }
 </style>

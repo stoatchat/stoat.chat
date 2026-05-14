@@ -17,8 +17,7 @@ import Consts from "../../lib/consts";
     <div class="center">
       <h1 class="main-heading">Get Stoat on all your devices</h1>
       <p class="main-heading-sub">
-        Download Stoat for desktop, mobile, and the web.<br />
-        We're working on doing your smart fridge next. Maybe.
+          Install Stoat on desktop or mobile, or jump straight into the web app.
       </p>
       <Cta isDownloadPage />
     </div>
@@ -94,7 +93,7 @@ import Consts from "../../lib/consts";
         </p>
       </DownloadTile>
       <DownloadTile
-        name="Android (Beta)"
+        name="Android"
         stores={[
           {
             name: "Play Store",
@@ -102,6 +101,7 @@ import Consts from "../../lib/consts";
             primary: true,
           },
         ]}
+        beta
       >
         <p slot="description" class="description">
           Download Stoat for Android on the Google Play Store.<br />
@@ -110,7 +110,7 @@ import Consts from "../../lib/consts";
         </p>
       </DownloadTile>
       <DownloadTile
-        name="iOS and iPadOS (Beta)"
+        name="iOS and iPadOS"
         stores={[
           {
             name: "TestFlight",
@@ -118,6 +118,7 @@ import Consts from "../../lib/consts";
             primary: true,
           },
         ]}
+        beta
       >
         <p slot="description" class="description">
           Download Stoat for iOS and iPadOS on TestFlight.<br />
