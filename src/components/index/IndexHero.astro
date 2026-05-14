@@ -6,8 +6,8 @@ import productImg from "../../assets/index/product.png"
 <header>
     <div class="hero-card">
         <div class="text-part">
-            <h1 class="tagline">Find your<br/>community.</h1>
-            <h2 class="subtagline">Stoat is the chat app for friends and communities that finally works the way you always wished it would.</h2>
+            <h1 class="tagline">Find your community.</h1>
+            <h2 class="subtagline">Stoat is the open-source group chat app for friends and communities that works the way you always wished it would.</h2>
             <div class="cta">
                 <Cta/>
             </div>
@@ -18,12 +18,19 @@ import productImg from "../../assets/index/product.png"
 <style lang="scss">
     header {
         padding-top: 10rem;
-        width: min(90vw, 1400px);
+        width: 100%;
         margin: 0 auto;
+        background: linear-gradient(180deg, var(--color-bg-darker) 0%, rgba(255, 255, 255, 0) 100%);
+
+        @media (max-width: 768px) {
+            background: none;
+        }
     }
 
     .hero-card {
         border-radius: 2rem;
+        width: min(90vw, 1400px);
+        margin: 0 auto;
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow:
@@ -47,6 +54,8 @@ import productImg from "../../assets/index/product.png"
     .text-part {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
         margin: 1rem;
         padding-top: 2rem;
 
@@ -68,9 +77,9 @@ import productImg from "../../assets/index/product.png"
 
     .subtagline {
         opacity: 0.6;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        max-width: 40ch;
+        font-weight: 450;
+        letter-spacing: 0.01em;
+        max-width: 43ch;
     }
 
     @media (max-width: 768px) {
