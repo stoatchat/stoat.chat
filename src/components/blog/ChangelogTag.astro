@@ -9,7 +9,7 @@ interface Props {
 
 const { product, noMargin = false, useLongName = false } = Astro.props
 const backgroundColor = {
-    web: "#61dafb",
+    web: "#99e2fc",
     android: "#3ddc84",
     ios: "#1b74f9",
     api: "#505463",
@@ -27,14 +27,14 @@ const productName = {
     android: "Android",
     ios: "iOS and iPadOS",
     api: "API",
-    all: "All Platforms",
+    all: "Service-Wide",
 }[product]
 const longProductName = {
     web: "Web and Desktop",
     android: "Android",
     ios: "iOS and iPadOS",
     api: "API",
-    all: "Affects All Platforms",
+    all: "Service-Wide",
 }[product]
 ---
 

@@ -12,6 +12,8 @@
 </div>
 
 <style lang="scss">
+    @use "sass:color";
+
     .technical-content-note {
         h3 {
             font-size: 1rem;
@@ -35,7 +37,7 @@
             color: var(--color-secondary);
             text-decoration: underline;
             text-underline-offset: 0.2rem;
-            text-decoration-color: transparentize(#00ffd8, 0.5);
+            text-decoration-color: color.scale(#00ffd8, $alpha: -50%);
 
             &:hover {
                 color: var(--color-secondary-400);
