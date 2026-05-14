@@ -1,7 +1,6 @@
 ---
 // This is the "All blog posts" page, but also "All changelogs".
 // They are amalgamated into one page and query parameters decide what to show.
-// PHP called. It wants this file back. But it isn't getting it, because this is actually the simplest way to do this.
 
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/MarketingLayout.astro"
@@ -35,7 +34,7 @@ if (changelogsOnlyForProduct) {
     }
 
     changelogEntries = changelogEntries.filter((entry) => {
-        return entry.data.product === changelogsOnlyForProduct || entry.data.product === "all"
+        return entry.data.product === changelogsOnlyForProduct
     })
 }
 ---
@@ -179,7 +178,7 @@ if (changelogsOnlyForProduct) {
         height: 12rem;
 
         @media (max-width: 768px) {
-            height: 3rem;
+            height: 6rem;
         }
     }
 
