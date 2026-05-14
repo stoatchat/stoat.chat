@@ -38,6 +38,12 @@ importers:
       express:
         specifier: ^4.19.2
         version: 4.21.2
+      micromark:
+        specifier: ^4.0.2
+        version: 4.0.2
+      micromark-extension-gfm:
+        specifier: ^3.0.0
+        version: 3.0.0
       sass:
         specifier: ^1.77.8
         version: 1.93.2
