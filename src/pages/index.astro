@@ -5,6 +5,17 @@ import Footer from "../components/layout/Footer.astro"
 import IndexHero from "../components/index/IndexHero.astro"
 import Cta from "../components/index/Cta_S.astro"
 import ReasonTile from "../components/index/ReasonTile.astro"
+import { Image } from "astro:assets"
+import filesImg from "../assets/index/files.png"
+import themingImg from "../assets/index/theming.png"
+import groupImg from "../assets/index/group.png"
+import botsImg from "../assets/index/bots.png"
+import issuesImg from "../assets/index/issues.png"
+import boltBoostIcon from "../assets/apache2/bolt_boost_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
+import formatPaintIcon from "../assets/apache2/format_paint_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
+import groupIcon from "../assets/apache2/group_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
+import codeXmlIcon from "../assets/apache2/code_xml_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
 ---
 
 <Layout title="Stoat - Find your community" backgroundColor="var(--color-bg-primary)">
@@ -53,35 +64,65 @@ import ReasonTile from "../components/index/ReasonTile.astro"
         <h2>Still not convinced?</h2>
         <div class="added-value-items">
             <div class="added-value-item">
-                <h3>Don't pay for basic stuff.</h3>
-                <p>
-                    Custom emojis, a 20MB file upload limit and a server-specific profile picture with no subscription required. Animated avatars for everyone.
-                    We've even solved the age-old problem of letting you set a banner on your profile without making you pay for it. It's the little things.
-                </p>
+                <div class="added-value-text">
+                    <Image src={boltBoostIcon} alt="" class="added-value-icon" />
+                    <h3>Don't pay for basic stuff.</h3>
+                    <p>
+                        Custom emojis, a 20MB file upload limit and a server-specific profile picture with no subscription required. Animated avatars for everyone.
+                        We've even solved the age-old problem of letting you set a banner on your profile without making you pay for it. It's the little things.
+                    </p>
+                </div>
+                <div class="added-value-image">
+                    <Image src={filesImg} alt="" />
+                </div>
             </div>
             <div class="added-value-item reverse">
-                <h3>Theming won't get you banned.</h3>
-                <p>
-                    Stoat has some cool-looking themes right out of the box, and if you don't like them, get more from the Discover section or make your own. You can even use CSS if you're feeling adventurous.
-                </p>
+                <div class="added-value-text">
+                    <Image src={formatPaintIcon} alt="" class="added-value-icon" />
+                    <h3>Theming won't get you banned.</h3>
+                    <p>
+                        Stoat has some cool-looking themes right out of the box, and if you don't like them, get more from the Discover section or make your own. You can even use CSS if you're feeling adventurous.
+                    </p>
+                </div>
+                <div class="added-value-image">
+                    <Image src={themingImg} alt="" />
+                </div>
             </div>
             <div class="added-value-item">
-                <h3>Group DMs that scale.</h3>
-                <p>
-                    Group DMs on Stoat support up to 50 members, making them perfect for everything from ad-hoc voice groups to project collaboration. Bots work in them too, because why wouldn't they?
-                </p>
+                <div class="added-value-text">
+                    <Image src={groupIcon} alt="" class="added-value-icon" />
+                    <h3>Group DMs that scale.</h3>
+                    <p>
+                        Group DMs on Stoat support up to 50 members, making them perfect for everything from ad-hoc voice groups to project collaboration. Bots work in them too, because why wouldn't they?
+                    </p>
+                </div>
+                <div class="added-value-image">
+                    <Image src={groupImg} alt="" />
+                </div>
             </div>
             <div class="added-value-item reverse">
-                <h3>Developers love it.</h3>
-                <p>
-                    Our public API is so powerful that we use it ourselves for the official apps. If you're a developer, you'll feel right at home building with Stoat, whether it's a simple bot or a custom client.
-                </p>
+                <div class="added-value-text">
+                    <Image src={codeXmlIcon} alt="" class="added-value-icon" />
+                    <h3>Developers love it.</h3>
+                    <p>
+                        Our public API is so powerful that we use it ourselves for the official apps. If you're a developer, you'll feel right at home building with Stoat, whether it's a simple bot or a custom client.
+                    </p>
+                </div>
+                <div class="added-value-image">
+                    <Image src={botsImg} alt="" />
+                </div>
             </div>
             <div class="added-value-item">
-                <h3>We actually listen.</h3>
-                <p>
-                    We have an open issue tracker. If you have a problem with the software, want to request a feature, or just want to say hi, we're all ears: just join our community server and let us know what you think.
-                </p>
+                <div class="added-value-text">
+                    <Image src={campaignIcon} alt="" class="added-value-icon" />
+                    <h3>We actually listen.</h3>
+                    <p>
+                        We have an open issue tracker. If you have a problem with the software, want to request a feature, or just want to say hi, we're all ears: just join our community server and let us know what you think.
+                    </p>
+                </div>
+                <div class="added-value-image">
+                    <Image src={issuesImg} alt="" />
+                </div>
             </div>
         </div>
     </section>
@@ -135,45 +176,76 @@ import ReasonTile from "../components/index/ReasonTile.astro"
     .added-value-items {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 4rem;
 
         .added-value-item {
-            text-align: left;
-
-            h3 {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
-                font-weight: 600;
-            }
-
-            p {
-                max-width: 600px;
-                font-weight: 450;
-                letter-spacing: 0.02em;
-                line-height: 1.4;
-            }
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
 
             &.reverse {
-                text-align: right;
+                flex-direction: row-reverse;
+
+                .added-value-text {
+                    text-align: right;
+
+                    .added-value-icon {
+                        margin-left: auto;
+                    }
+                }
+            }
+
+            .added-value-text {
+                flex: 1;
+                text-align: left;
+
+                .added-value-icon {
+                    width: 3rem;
+                    height: 3rem;
+                    display: block;
+                    margin-bottom: 0.75rem;
+                    pointer-events: none;
+                    user-select: none;
+                }
 
                 h3 {
-                    margin-left: auto;
+                    font-size: 1.75rem;
+                    margin-bottom: 1rem;
+                    font-weight: 600;
                 }
 
                 p {
-                    margin-left: auto;
+                    font-weight: 450;
+                    letter-spacing: 0.02em;
+                    line-height: 1.4;
+                }
+            }
+
+            .added-value-image {
+                flex: 1;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    border-radius: 12px;
+                    object-fit: cover;
+                    pointer-events: none;
+                    user-select: none;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column !important;
+                gap: 1.5rem;
+
+                .added-value-text {
+                    text-align: left !important;
                 }
 
-                @media screen and (max-width: 768px) {
-                    text-align: left;
-
-                    h3 {
-                        margin-left: 0;
-                    }
-
-                    p {
-                        margin-left: 0;
-                    }
+                .added-value-image {
+                    width: 100%;
                 }
             }
         }
