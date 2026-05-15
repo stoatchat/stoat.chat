@@ -5,7 +5,6 @@ import Footer from "../components/layout/Footer.astro"
 import IndexHero from "../components/index/IndexHero.astro"
 import Cta from "../components/index/Cta_S.astro"
 import ReasonTile from "../components/index/ReasonTile.astro"
-import { Image } from "astro:assets"
 import filesImg from "../assets/index/files.png"
 import themingImg from "../assets/index/theming.png"
 import groupImg from "../assets/index/group.png"
@@ -65,7 +64,7 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
         <div class="added-value-items">
             <div class="added-value-item">
                 <div class="added-value-text">
-                    <Image src={boltBoostIcon} alt="" class="added-value-icon" />
+                    <img src={boltBoostIcon.src} alt="" class="added-value-icon" />
                     <h3>Don't pay for basic stuff.</h3>
                     <p>
                         Custom emojis, a 20MB file upload limit and a server-specific profile picture with no subscription required. Animated avatars for everyone.
@@ -73,55 +72,55 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
                     </p>
                 </div>
                 <div class="added-value-image">
-                    <Image src={filesImg} alt="" />
+                    <img src={filesImg.src} alt="" />
                 </div>
             </div>
             <div class="added-value-item reverse">
                 <div class="added-value-text">
-                    <Image src={formatPaintIcon} alt="" class="added-value-icon" />
+                    <img src={formatPaintIcon.src} alt="" class="added-value-icon" />
                     <h3>Theming won't get you banned.</h3>
                     <p>
                         Stoat has some cool-looking themes right out of the box, and if you don't like them, get more from the Discover section or make your own. You can even use CSS if you're feeling adventurous.
                     </p>
                 </div>
                 <div class="added-value-image">
-                    <Image src={themingImg} alt="" />
+                    <img src={themingImg.src} alt="" />
                 </div>
             </div>
             <div class="added-value-item">
                 <div class="added-value-text">
-                    <Image src={groupIcon} alt="" class="added-value-icon" />
+                    <img src={groupIcon.src} alt="" class="added-value-icon" />
                     <h3>Group DMs that scale.</h3>
                     <p>
                         Group DMs on Stoat support up to 50 members, making them perfect for everything from ad-hoc voice groups to project collaboration. Bots work in them too, because why wouldn't they?
                     </p>
                 </div>
                 <div class="added-value-image">
-                    <Image src={groupImg} alt="" />
+                    <img src={groupImg.src} alt="" />
                 </div>
             </div>
             <div class="added-value-item reverse">
                 <div class="added-value-text">
-                    <Image src={codeXmlIcon} alt="" class="added-value-icon" />
+                    <img src={codeXmlIcon.src} alt="" class="added-value-icon" />
                     <h3>Developers love it.</h3>
                     <p>
                         Our public API is so powerful that we use it ourselves for the official apps. If you're a developer, you'll feel right at home building with Stoat, whether it's a simple bot or a custom client.
                     </p>
                 </div>
                 <div class="added-value-image">
-                    <Image src={botsImg} alt="" />
+                    <img src={botsImg.src} alt="" />
                 </div>
             </div>
             <div class="added-value-item">
                 <div class="added-value-text">
-                    <Image src={campaignIcon} alt="" class="added-value-icon" />
+                    <img src={campaignIcon.src} alt="" class="added-value-icon" />
                     <h3>We actually listen.</h3>
                     <p>
                         We have an open issue tracker. If you have a problem with the software, want to request a feature, or just want to say hi, we're all ears: just join our community server and let us know what you think.
                     </p>
                 </div>
                 <div class="added-value-image">
-                    <Image src={issuesImg} alt="" />
+                    <img src={issuesImg.src} alt="" />
                 </div>
             </div>
         </div>
