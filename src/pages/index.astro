@@ -10,11 +10,11 @@ import themingImg from "../assets/index/theming.png"
 import groupImg from "../assets/index/group.png"
 import botsImg from "../assets/index/bots.png"
 import issuesImg from "../assets/index/issues.png"
-import boltBoostIcon from "../assets/apache2/bolt_boost_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
-import formatPaintIcon from "../assets/apache2/format_paint_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
-import groupIcon from "../assets/apache2/group_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
-import codeXmlIcon from "../assets/apache2/code_xml_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg"
+import boltBoostIcon from "../assets/apache2/bolt_boost_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg?raw"
+import formatPaintIcon from "../assets/apache2/format_paint_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg?raw"
+import groupIcon from "../assets/apache2/group_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg?raw"
+import codeXmlIcon from "../assets/apache2/code_xml_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg?raw"
+import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg?raw"
 ---
 
 <Layout title="Stoat - Find your community" backgroundColor="var(--color-bg-primary)">
@@ -64,7 +64,7 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
         <div class="added-value-items">
             <div class="added-value-item">
                 <div class="added-value-text">
-                    <img src={boltBoostIcon.src} alt="" class="added-value-icon" />
+                    <span class="added-value-icon" set:html={boltBoostIcon} />
                     <h3>Don't pay for basic stuff.</h3>
                     <p>
                         Custom emojis, a 20MB file upload limit and a server-specific profile picture with no subscription required. Animated avatars for everyone.
@@ -77,7 +77,7 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
             </div>
             <div class="added-value-item reverse">
                 <div class="added-value-text">
-                    <img src={formatPaintIcon.src} alt="" class="added-value-icon" />
+                    <span class="added-value-icon" set:html={formatPaintIcon} />
                     <h3>Theming won't get you banned.</h3>
                     <p>
                         Stoat has some cool-looking themes right out of the box, and if you don't like them, get more from the Discover section or make your own. You can even use CSS if you're feeling adventurous.
@@ -89,7 +89,7 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
             </div>
             <div class="added-value-item">
                 <div class="added-value-text">
-                    <img src={groupIcon.src} alt="" class="added-value-icon" />
+                    <span class="added-value-icon" set:html={groupIcon} />
                     <h3>Group DMs that scale.</h3>
                     <p>
                         Group DMs on Stoat support up to 50 members, making them perfect for everything from ad-hoc voice groups to project collaboration. Bots work in them too, because why wouldn't they?
@@ -101,7 +101,7 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
             </div>
             <div class="added-value-item reverse">
                 <div class="added-value-text">
-                    <img src={codeXmlIcon.src} alt="" class="added-value-icon" />
+                    <span class="added-value-icon" set:html={codeXmlIcon} />
                     <h3>Developers love it.</h3>
                     <p>
                         Our public API is so powerful that we use it ourselves for the official apps. If you're a developer, you'll feel right at home building with Stoat, whether it's a simple bot or a custom client.
@@ -113,7 +113,7 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
             </div>
             <div class="added-value-item">
                 <div class="added-value-text">
-                    <img src={campaignIcon.src} alt="" class="added-value-icon" />
+                    <span class="added-value-icon" set:html={campaignIcon} />
                     <h3>We actually listen.</h3>
                     <p>
                         We have an open issue tracker. If you have a problem with the software, want to request a feature, or just want to say hi, we're all ears: just join our community server and let us know what you think.
@@ -162,7 +162,7 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
 
     h2 {
         font-size: 2.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 5rem;
         font-weight: 750;
     }
 
@@ -206,6 +206,12 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
                     margin-bottom: 0.75rem;
                     pointer-events: none;
                     user-select: none;
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
                 }
 
                 h3 {
@@ -241,6 +247,10 @@ import campaignIcon from "../assets/apache2/campaign_24dp_E3E3E3_FILL1_wght400_G
 
                 .added-value-text {
                     text-align: left !important;
+
+                    .added-value-icon {
+                        margin-left: 0 !important;
+                    }
                 }
 
                 .added-value-image {
