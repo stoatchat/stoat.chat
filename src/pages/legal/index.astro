@@ -21,7 +21,7 @@ const entries = await getCollection("legal")
         {
             entries.map((entry) => (
                 <li>
-                    <a href={`/legal/${entry.slug}`}>{entry.data.title}</a>
+                    <a href={`/legal/${entry.id}`}>{entry.data.title}</a>
                 </li>
             ))
         }

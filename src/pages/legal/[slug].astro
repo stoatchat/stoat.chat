@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/LegalLayout.astro"
-import { getEntry } from "astro:content"
+import { getEntry, render } from "astro:content"
 
 const { slug } = Astro.params as { slug: string }
 const entry = await getEntry("legal", slug)
@@ -9,9 +9,9 @@ if (!entry) {
     return Astro.rewrite("/404")
 }
 
-const { data, render } = entry
+const { data } = entry
 
-const { Content } = await render()
+const { Content } = await render(entry)
 ---
 
 <Layout
