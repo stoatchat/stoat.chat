@@ -1,7 +1,7 @@
 ---
 import TechnicalContent from "../../components/blog/TechnicalContent.astro"
 import Layout from "../../layouts/BlogLayout.astro"
-import { getEntry } from "astro:content"
+import { getEntry, render } from "astro:content"
 
 const { slug } = Astro.params as { slug: string }
 const entryBlog = await getEntry("blog", slug)
@@ -11,9 +11,10 @@ if (!entryBlog && !entryChangelog) {
     return Astro.rewrite("/404")
 }
 
-const { data, render } = (entryBlog || entryChangelog)!
+const entry = (entryBlog || entryChangelog)!
 
-const { Content } = await render()
+const { data } = entry
+const { Content } = await render(entry)
 ---
 
 <Layout

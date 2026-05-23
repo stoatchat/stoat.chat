@@ -47,7 +47,7 @@ if (changelogsOnlyForProduct) {
             // Do not show articles if we're showing all changelogs (= only changelogs)
             !allChangelogs && (
                 <Article
-                    href={`/updates/${firstBlogPost.slug}`}
+                    href={`/updates/${firstBlogPost.id}`}
                     big={true}
                     title={firstBlogPost.data.title}
                     description={firstBlogPost.data.description}
@@ -106,7 +106,7 @@ if (changelogsOnlyForProduct) {
                 changelogEntries
                 .map((entry, i) => (
                     <Article
-                        href={`/updates/${entry.slug}`}
+                        href={`/updates/${entry.id}`}
                         big={false}
                         title={entry.data.title}
                         description={entry.data.description}
@@ -135,7 +135,7 @@ if (changelogsOnlyForProduct) {
                 {
                     blogEntries.map((entry, i) => (
                         <Article
-                            href={`/updates/${entry.slug}`}
+                            href={`/updates/${entry.id}`}
                             big={false}
                             title={entry.data.title}
                             description={entry.data.description}
