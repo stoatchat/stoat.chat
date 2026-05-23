@@ -2,6 +2,7 @@
 import CtaButton from "../components/index/CtaButton.astro"
 import Navbar from "../components/layout/Navbar.astro"
 import MarketingLayout from "../layouts/MarketingLayout.astro"
+import Footer from "../components/layout/Footer.astro"
 import { decode as cborDecode } from "cbor2"
 
 type UserQRData = {
@@ -13,10 +14,11 @@ type UserQRData = {
     id: string
 }
 
-let error: String | null = null
+let error: string | null = null
 let title = "Stoat"
 let data: UserQRData | null = null
 let noDisplayName = false
+let avatar: string|null = null
 
 try {
     const qr = new URL(Astro.request.url).search
@@ -55,7 +57,9 @@ try {
         ) : (
             <div class="lr-pad">
                 <img
-                    src={`https://cdn.stoatusercontent.com/avatars/${data?.avatar}?max_side=256`}
+                    src={data?.avatar !== "01JDZRBY95P8AY4CFVX16FFVWS"
+                          ? `https://cdn.stoatusercontent.com/avatars/${data?.avatar}?max_side=256`
+                          : `https://api.stoat.chat/users/${data?.id}/default_avatar`}
                     alt={
                         ((noDisplayName ? data?.username : data?.displayName) ??
                             "User") +
@@ -83,6 +87,11 @@ try {
             </div>
         )
     }
+
+    {error === null && (
+      <div class="footer-spacer"></div>
+      <Footer />
+    )}
 </MarketingLayout>
 
 <style lang="scss">
@@ -94,6 +103,14 @@ try {
 
     .spacer {
         height: 12rem;
+
+        @media (max-width: 768px) {
+            height: 6rem;
+        }
+    }
+
+    .footer-spacer {
+        height: 6rem;
     }
 
     .avatar {
