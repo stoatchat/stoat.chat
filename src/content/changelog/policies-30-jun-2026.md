@@ -16,10 +16,10 @@ Our privacy policy, terms of service, and community guidelines have been updated
 We encourage you to review the updated policies:
 
 - [Privacy Policy](https://stoat.chat/legal/privacy)
-  - [Privacy Policy - Stoat Supplement](https://stoat.chat/legal/privacy-stoat-supplement)
-  - [Privacy Policy - Gifbox Supplement](https://stoat.chat/legal/privacy-gifbox-supplement)
+  - [Privacy Policy - Stoat Supplement](https://stoat.chat/legal/privacy-stoat-supplement) (New)
+  - [Privacy Policy - Gifbox Supplement](https://stoat.chat/legal/privacy-gifbox-supplement) (New)
 - [Terms of Service](https://stoat.chat/legal/terms)
-  - [Terms of Service - Stoat Supplement](https://stoat.chat/legal/terms-stoat-supplement)
-  - [Terms of Service - Gifbox Supplement](https://stoat.chat/legal/terms-gifbox-supplement)
+  - [Terms of Service - Stoat Supplement](https://stoat.chat/legal/terms-stoat-supplement) (New)
+  - [Terms of Service - Gifbox Supplement](https://stoat.chat/legal/terms-gifbox-supplement) (New)
 - [Stoat Community Guidelines](https://stoat.chat/legal/community-guidelines)
-- [Gifbox Community Guidelines](https://gifbox.me/community-guidelines)
+- [Gifbox Community Guidelines](https://gifbox.me/community-guidelines) (New)
