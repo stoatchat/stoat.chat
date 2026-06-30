@@ -8,7 +8,7 @@ relevance:
   minVersionCode: 0
 ---
 
-Our privacy policy, terms of service, and community guidelines have been updated to reflect changes in our platform, most notably the introduction of Gifbox, our GIF sharing service.
+We are updating all our policy documents to change mentions of our former name "Revolt" to "Stoat", introduce our new GIF sharing platform Gifbox, prepare for the rollout of screen share & video chat and added some legal boilerplate that was previously missing. You are advised to review the changes.
 
 - If you are a user of Stoat, new policies will take effect on 30 July 2026. The new community guidelines take effect immediately.
 - If you are a user of Gifbox, the new policies will take effect immediately upon your acceptance of them.
