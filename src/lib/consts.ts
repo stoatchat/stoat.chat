@@ -1,4 +1,4 @@
-const LATEST_BUILD = "1.4.1" as const;
+const LATEST_BUILD = "1.5.2" as const;
 
 export default class Consts {
   static readonly MSSTORE_URL =
