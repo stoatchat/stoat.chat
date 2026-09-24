@@ -22,8 +22,8 @@ export const PLATFORM_LINKS = {
     href: Consts.PLAYSTORE_URL,
   },
   ios: {
-    store: "Opens TestFlight",
-    href: Consts.TESTFLIGHT_URL,
+    store: "Install the web app",
+    href: "/download/ios",
   },
   unknown: {
     store: "",
@@ -75,7 +75,7 @@ const { isDownloadPage = false } = Astro.props;
       </div>
     )
   }
-  <CtaButton label="Open Web App" href="https://stoat.chat/app" />
+  <CtaButton label="Open Web App" href={Consts.WEB_APP_URL} />
 </div>
 <style lang="scss">
   .cta {

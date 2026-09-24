@@ -7,8 +7,7 @@ export default class Consts {
     "https://play.google.com/store/apps/details?id=chat.revolt" as const;
   static readonly FLATHUB_URL =
     "https://flathub.org/apps/chat.revolt.RevoltDesktop" as const;
-  static readonly TESTFLIGHT_URL =
-    "https://testflight.apple.com/join/NVYaEtJD" as const;
+  static readonly WEB_APP_URL = "https://stoat.chat/app" as const;
   static readonly GITHUB_URL =
     "https://github.com/stoatchat/for-desktop/releases/" as const;
   static readonly WINDOWS_BUILD_URL =
@@ -19,6 +18,4 @@ export default class Consts {
     `https://github.com/stoatchat/for-desktop/releases/download/v${LATEST_BUILD}/Stoat-darwin-x64-${LATEST_BUILD}.zip` as const;
   static readonly LINUX_FLATHUB =
     `https://flathub.org/en/apps/chat.stoat.StoatDesktop` as const;
-  static readonly LINUX_PACKAGE_VERSIONS =
-    `https://repology.org/project/stoat-desktop/versions` as const;
 }

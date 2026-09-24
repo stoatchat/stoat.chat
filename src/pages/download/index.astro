@@ -76,19 +76,16 @@ import Consts from "../../lib/consts";
           //   primary: true,
           // },
           {
-            name: "Packages by Distribution",
-            url: Consts.LINUX_PACKAGE_VERSIONS,
-            primary: false,
-          },
-          {
             name: "GitHub",
             url: Consts.GITHUB_URL,
-            primary: false,
+            primary: true,
           },
         ]}
       >
         <p slot="description" class="description">
-          We are currently in the process of publishing Stoat to Flathub.
+          Download Stoat for Linux from GitHub releases.<br />
+          AppImages, DEB, RPM and a Flatpak are available.
+          <!-- We are currently in the process of publishing Stoat to Flathub. -->
           <!-- We recommend installing Stoat through Flathub. -->
         </p>
       </DownloadTile>
@@ -113,16 +110,21 @@ import Consts from "../../lib/consts";
         name="iOS and iPadOS"
         stores={[
           {
-            name: "TestFlight",
-            url: Consts.TESTFLIGHT_URL,
+            name: "Open Web App",
+            url: Consts.WEB_APP_URL,
             primary: true,
           },
+          {
+            name: "Installation Guide",
+            url: "/download/ios",
+            primary: false,
+          },
         ]}
-        beta
       >
         <p slot="description" class="description">
-          Download Stoat for iOS and iPadOS on TestFlight.<br />
-          Requires iOS 18.0 or later.
+          Use Stoat on iPhone and iPad by installing the web app.<br />
+          Open Stoat in Safari, tap the Share button, then select "Add to Home
+          Screen".
         </p>
       </DownloadTile>
     </div>

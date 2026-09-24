@@ -13,20 +13,25 @@ import Consts from "../../lib/consts"
     <div class="lr-pad">
         <div class="with-phone">
             <div class="main">
-                <h1 class="main-heading">Get Stoat for iOS (Beta)</h1>
+                <h1 class="main-heading">Get Stoat for iOS</h1>
                 <p class="main-heading-sub">
                     <span class="block-sm">No matter where you are. </span>
                     No matter what device you're on.<br />
                     <span class="block-sm">Stoat is here for you.</span>
                     Works on iPhone and iPad.<br />
-                    <span class="early-access"
-                        >Early access: App may be unstable but we'll keep
-                        improving it.</span
-                    >
+                    <span class="coming-soon">
+                        A native iOS app is in the works. Until it ships, the
+                        web app puts Stoat on your home screen, and works just like an app.
+                    </span>
                 </p>
+                <ol class="steps">
+                    <li>Open the Stoat web app in Safari.</li>
+                    <li>Tap the Share button.</li>
+                    <li>Select "Add to Home Screen", then tap "Add".</li>
+                </ol>
                 <CtaButton
-                    href={Consts.TESTFLIGHT_URL}
-                    label="Join TestFlight"
+                    href={Consts.WEB_APP_URL}
+                    label="Open Web App"
                     primary
                 />
             </div>
@@ -96,7 +101,7 @@ import Consts from "../../lib/consts"
         opacity: 0.7;
         line-height: 1.5;
 
-        span.early-access {
+        span.coming-soon {
             display: block;
             margin-top: 1rem;
             font-size: 0.7em;
@@ -110,9 +115,22 @@ import Consts from "../../lib/consts"
                 display: block;
             }
 
-            span.early-access {
+            span.coming-soon {
                 font-size: 1rem;
             }
+        }
+    }
+
+    .steps {
+        font-size: 1.1rem;
+        color: white;
+        opacity: 0.7;
+        line-height: 1.8;
+        margin: 0 0 2rem;
+        padding-left: 1.25rem;
+
+        @media (max-width: 768px) {
+            text-align: left;
         }
     }
 
