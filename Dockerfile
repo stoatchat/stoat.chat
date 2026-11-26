@@ -1,6 +1,6 @@
 FROM node:lts AS base
 WORKDIR /app
-RUN corepack enable
+RUN npm install -g pnpm@9.7.0
 
 COPY package.json pnpm-lock.yaml ./
 
